@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65004193-9927-4adf-be9e-3d3b7c9585f2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Board$GTuple2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Board$Tuple2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Board$Tuple4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Board.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BruteCollinearPoints.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/CollinearClient.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$1GroupSegment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$GroupSegment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$MySegment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$SegmentControl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$Slope.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPointsGit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPointsGit2$Segment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPointsGit2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Lab.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LabBrute.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LabBrute.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LabFatorial.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LineSegment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Point$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Point.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PointTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PuzzleChecker.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$GTuple2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$HammingBoardComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$ManhattanBoardComparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$NodeIterable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$NodeIterator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver.class" afterPath="" />
+    <list default="true" id="65004193-9927-4adf-be9e-3d3b7c9585f2" name="Default" comment="deleting classes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PercolatoinAssignment.iws" />
@@ -94,10 +61,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PuzzleChecker.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Percolation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Percolation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="53.444443">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PercolationStats.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PercolationStats.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.826087">
+              <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PuzzleChecker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PuzzleChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3968254">
+            <state vertical-scroll-proportion="-8.333333">
               <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
               <folding />
             </state>
@@ -348,6 +335,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1000" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="GO_FMT" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -858,12 +846,19 @@
       <workItem from="1455827971535" duration="4405000" />
       <workItem from="1455839016228" duration="11742000" />
       <workItem from="1455855098309" duration="8932000" />
-      <workItem from="1455907076139" duration="35903000" />
+      <workItem from="1455907076139" duration="36306000" />
     </task>
+    <task id="LOCAL-00001" summary="deleting classes">
+      <created>1455997206494</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1455997206494</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232813000" />
+    <option name="totallyTimeSpent" value="233216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -877,12 +872,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22879177" sideWeight="0.5028612" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297414" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36246786" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="-21" y="50" width="1442" height="539" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5689655" sideWeight="0.49713877" order="12" side_tool="false" content_ui="tabs" x="0" y="23" width="1434" height="873" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5689655" sideWeight="0.49713877" order="12" side_tool="false" content_ui="tabs" x="0" y="23" width="1434" height="873" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15750916" sideWeight="0.6940874" order="0" side_tool="false" content_ui="combo" x="-251" y="23" width="413" height="873" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15750916" sideWeight="0.6940874" order="0" side_tool="false" content_ui="combo" x="-251" y="23" width="413" height="873" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1981402" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35021552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="118" y="54" width="1154" height="454" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -935,6 +930,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="deleting classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleting classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1001,14 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BruteCollinearPoints.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.7777777">
@@ -1063,8 +1054,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PuzzleChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3968254">
+        <state vertical-scroll-proportion="-8.333333">
           <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Percolation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="53.444443">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PercolationStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.826087">
+          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
           <folding />
         </state>
       </provider>
