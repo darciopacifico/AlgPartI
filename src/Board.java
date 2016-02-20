@@ -50,8 +50,6 @@ public class Board {
 
                     int expected = ((r * blocksx.length) + c + 1) % (dimension * dimension);
 
-                    // sums out of place blocks only if current cell is not the last one
-
                     if (blocksx[r][c] != 0 && blocksx[r][c] != expected) {
                         this.hamming++;
                     }

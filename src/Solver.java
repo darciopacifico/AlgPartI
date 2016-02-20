@@ -34,10 +34,7 @@ public class Solver {
 
         @Override
         public int compare(Node o1, Node o2) {
-
             int diff = (o1.getBoard().manhattan() + o1.getMoves()) - (o2.getBoard().manhattan() + o2.getMoves());
-
-
             return diff;
         }
     }

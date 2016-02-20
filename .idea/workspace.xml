@@ -2,21 +2,175 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65004193-9927-4adf-be9e-3d3b7c9585f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board$GTuple2.class" afterPath="$PROJECT_DIR$/src/Board$GTuple2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board$Tuple2.class" afterPath="$PROJECT_DIR$/src/Board$Tuple2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board$Tuple4.class" afterPath="$PROJECT_DIR$/src/Board$Tuple4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board.class" afterPath="$PROJECT_DIR$/src/Board.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PuzzleChecker.class" afterPath="$PROJECT_DIR$/src/PuzzleChecker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solver$HammingBoardComparator.class" afterPath="$PROJECT_DIR$/src/Solver$HammingBoardComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solver$ManhattanBoardComparator.class" afterPath="$PROJECT_DIR$/src/Solver$ManhattanBoardComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solver$Node.class" afterPath="$PROJECT_DIR$/src/Solver$Node.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solver$NodeIterable.class" afterPath="$PROJECT_DIR$/src/Solver$NodeIterable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solver$NodeIterator.class" afterPath="$PROJECT_DIR$/src/Solver$NodeIterator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solver.class" afterPath="$PROJECT_DIR$/src/Solver.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BruteCollinearPoints.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FastCollinearPoints.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LabBrute.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LabFatorial.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LineSegment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Point.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PointTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/8puzzle.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/9x9_ref.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Lab.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LabMut.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SolverNovoFudido.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hammingRef_16127.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle00.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle03.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle03_solved.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle04.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle05.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle06.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle07.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle08.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle09.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle10.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle11.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle12.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle13.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle14.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle15.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle16.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle17.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle18.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle19.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle20.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle21.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle22.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle23.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle24.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle25.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle26.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle27.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle28.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle29.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-00.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-03.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-04.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-05.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-06.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-unsolvable1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-unsolvable2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-unsolvable3.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle30.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle31.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle32.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle33.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle34.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle35.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle36.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle37.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle38.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle39.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-00.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-03.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-04.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-05.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-06.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-07.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-08.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-09.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-10.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-11.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-12.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-13.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-14.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-15.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-16.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-17.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-18.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-19.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-20.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-21.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-22.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-23.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-24.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-25.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-26.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-27.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-28.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-29.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-30.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-31.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-unsolvable.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-unsolvable1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-unsolvable2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle40.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle41.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle42.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle43.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle44.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle45.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle46.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle47.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle48.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle49.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-00.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-01.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-02.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-03.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-04.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-05.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-06.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-07.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-08.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-09.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-10.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-11.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-12.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-13.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-14.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-15.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-16.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-17.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-18.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-19.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-20.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-21.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-22.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-23.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-24.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-25.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-26.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-27.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-28.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-29.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-30.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-31.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-32.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-33.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-34.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-35.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-36.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-37.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-38.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-39.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-40.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-41.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-42.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-43.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-44.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-45.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-46.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-47.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-48.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-49.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-50.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-78.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-78_calcDist.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-80.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-unsolvable.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle50.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle_testeDLP.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board.java" afterPath="$PROJECT_DIR$/src/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PuzzleChecker.java" afterPath="$PROJECT_DIR$/src/PuzzleChecker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solver.java" afterPath="$PROJECT_DIR$/src/Solver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SolverNovoFudido.java" afterPath="$PROJECT_DIR$/src/SolverNovoFudido.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PercolatoinAssignment.iws" />
@@ -56,42 +210,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.5275974">
-              <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
-              <folding>
-                <element signature="e#4944#4945#0" expanded="true" />
-                <element signature="e#4977#4978#0" expanded="true" />
-                <element signature="e#5014#5015#0" expanded="true" />
-                <element signature="e#5050#5051#0" expanded="true" />
-                <element signature="e#5080#5081#0" expanded="true" />
-                <element signature="e#5113#5114#0" expanded="true" />
-                <element signature="e#5150#5151#0" expanded="true" />
-                <element signature="e#5186#5187#0" expanded="true" />
-                <element signature="e#5216#5217#0" expanded="true" />
-                <element signature="e#5249#5250#0" expanded="true" />
-                <element signature="e#5286#5287#0" expanded="true" />
-                <element signature="e#5322#5323#0" expanded="true" />
-                <element signature="e#5352#5353#0" expanded="true" />
-                <element signature="e#5385#5386#0" expanded="true" />
-                <element signature="e#5422#5423#0" expanded="true" />
-                <element signature="e#5458#5459#0" expanded="true" />
-                <element signature="e#5668#5669#0" expanded="true" />
-                <element signature="e#5700#5701#0" expanded="true" />
-                <element signature="e#5735#5736#0" expanded="true" />
-                <element signature="e#5769#5770#0" expanded="true" />
-                <element signature="e#5798#5799#0" expanded="true" />
-                <element signature="e#5830#5831#0" expanded="true" />
-                <element signature="e#5865#5866#0" expanded="true" />
-                <element signature="e#5899#5900#0" expanded="true" />
-                <element signature="e#6975#6982#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="scratch_190" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_190">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,99 +220,91 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="LabBrute.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LabBrute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.7777777">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PuzzleChecker.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PuzzleChecker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2173913">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Solver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Solver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.37037">
-              <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
+            <state vertical-scroll-proportion="-1.5555556">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FastCollinearPoints.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FastCollinearPoints.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1309#1310#0" expanded="true" />
-                <element signature="e#1344#1345#0" expanded="true" />
-                <element signature="e#1386#1387#0" expanded="true" />
-                <element signature="e#1426#1427#0" expanded="true" />
-                <element signature="e#1461#1462#0" expanded="true" />
-                <element signature="e#1497#1498#0" expanded="true" />
-                <element signature="e#1542#1543#0" expanded="true" />
-                <element signature="e#1584#1585#0" expanded="true" />
-                <element signature="e#1617#1618#0" expanded="true" />
-                <element signature="e#1653#1654#0" expanded="true" />
-                <element signature="e#1696#1697#0" expanded="true" />
-                <element signature="e#1738#1739#0" expanded="true" />
-                <element signature="e#2158#2164#0" expanded="true" />
-                <element signature="e#2277#2283#0" expanded="true" />
-                <element signature="e#4979#4986#0" expanded="true" />
+                <element signature="e#1377#1378#0" expanded="true" />
+                <element signature="e#1420#1421#0" expanded="true" />
+                <element signature="e#1500#1501#0" expanded="true" />
+                <element signature="e#1573#1574#0" expanded="true" />
+                <element signature="e#1846#1858#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SolverNovoFudido.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SolverNovoFudido.java">
+      <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2222223">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-8.37037">
+              <caret line="139" column="13" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3895#3896#0" expanded="true" />
+                <element signature="e#3938#3939#0" expanded="true" />
+                <element signature="e#4047#4508#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="puzzle12.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/puzzle12.txt">
+      <file leaf-file-name="BruteCollinearPoints.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BruteCollinearPoints.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="puzzle11.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/puzzle11.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="puzzle37.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/puzzle37.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="puzzle3x3-unsolvable1.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/puzzle3x3-unsolvable1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="puzzle16.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/puzzle16.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PuzzleChecker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PuzzleChecker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.11111">
-              <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
-              <folding />
+            <state vertical-scroll-proportion="-74.44444">
+              <caret line="134" column="1" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1303#1304#0" expanded="true" />
+                <element signature="e#1343#1344#0" expanded="true" />
+                <element signature="e#1423#1424#0" expanded="true" />
+                <element signature="e#1496#1497#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -252,9 +362,6 @@
         <option value="$PROJECT_DIR$/src/FastCollinearPointsGit.java" />
         <option value="$PROJECT_DIR$/src/FastCollinearPointsGit2.java" />
         <option value="$PROJECT_DIR$/src/LabBrute.java" />
-        <option value="$PROJECT_DIR$/src/BruteCollinearPoints.java" />
-        <option value="$PROJECT_DIR$/src/Point.java" />
-        <option value="$PROJECT_DIR$/src/FastCollinearPoints.java" />
         <option value="$PROJECT_DIR$/src/puzzle04.txt" />
         <option value="$PROJECT_DIR$/src/puzzle03.txt" />
         <option value="$PROJECT_DIR$/src/puzzle03_solved.txt" />
@@ -266,10 +373,13 @@
         <option value="$PROJECT_DIR$/src/Lab.java" />
         <option value="$PROJECT_DIR$/src/puzzle3x3-unsolvable1.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_190" />
-        <option value="$PROJECT_DIR$/src/PuzzleChecker.java" />
         <option value="$PROJECT_DIR$/src/SolverNovoFudido.java" />
+        <option value="$PROJECT_DIR$/src/FastCollinearPoints.java" />
+        <option value="$PROJECT_DIR$/src/BruteCollinearPoints.java" />
+        <option value="$PROJECT_DIR$/src/Point.java" />
         <option value="$PROJECT_DIR$/src/Solver.java" />
         <option value="$PROJECT_DIR$/src/Board.java" />
+        <option value="$PROJECT_DIR$/src/PuzzleChecker.java" />
       </list>
     </option>
   </component>
@@ -333,6 +443,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PercolatoinAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PercolatoinAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PercolatoinAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -863,12 +987,12 @@
       <workItem from="1455827971535" duration="4405000" />
       <workItem from="1455839016228" duration="11742000" />
       <workItem from="1455855098309" duration="8932000" />
-      <workItem from="1455907076139" duration="31831000" />
+      <workItem from="1455907076139" duration="34868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228741000" />
+    <option name="totallyTimeSpent" value="231778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -885,9 +1009,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36246786" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="-21" y="50" width="1442" height="539" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27693966" sideWeight="0.49713877" order="12" side_tool="false" content_ui="tabs" x="0" y="23" width="1434" height="873" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5689655" sideWeight="0.49713877" order="12" side_tool="false" content_ui="tabs" x="0" y="23" width="1434" height="873" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15750916" sideWeight="0.6940874" order="0" side_tool="false" content_ui="combo" x="-251" y="23" width="413" height="873" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15750916" sideWeight="0.6940874" order="0" side_tool="false" content_ui="combo" x="-251" y="23" width="413" height="873" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1981402" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35021552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="118" y="54" width="1154" height="454" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -943,14 +1067,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PuzzleChecker.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="56" />
     </breakpoint-manager>
     <watches-manager />
@@ -960,133 +1076,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/puzzle49.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle48.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle47.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle46.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle45.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle25.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle23.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-05.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-13.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-19.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-26.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-40.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-46.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-47.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-78.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0795756">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-78_calcDist.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0397878">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle43.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0198939">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle4x4-48.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0994695">
-          <caret line="5" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/src.zip!/java/util/Comparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1103,14 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle03_solved.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1119,46 +1100,6 @@
             <element signature="e#10065#10066#0" expanded="false" />
             <element signature="e#10148#10149#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle14.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle15.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hammingRef_16127.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/9x9_ref.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle3x3-04.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,158 +1114,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle27.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LabMut.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle00.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle_testeDLP.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2222223">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle07.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle04.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13043478">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle20.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle19.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle41.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle08.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle06.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle17.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle3x3-unsolvable1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle37.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle12.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle11.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/puzzle16.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PuzzleChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.11111">
-          <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_190">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.0">
@@ -1333,70 +1122,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SolverNovoFudido.java">
+    <entry file="file://$PROJECT_DIR$/src/FastCollinearPoints.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2222223">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1377#1378#0" expanded="true" />
+            <element signature="e#1420#1421#0" expanded="true" />
+            <element signature="e#1500#1501#0" expanded="true" />
+            <element signature="e#1573#1574#0" expanded="true" />
+            <element signature="e#1846#1858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LabBrute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7777777">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.37037">
+          <caret line="139" column="13" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3895#3896#0" expanded="true" />
+            <element signature="e#3938#3939#0" expanded="true" />
+            <element signature="e#4047#4508#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Solver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.37037">
-          <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
+        <state vertical-scroll-proportion="-1.5555556">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BruteCollinearPoints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-74.44444">
+          <caret line="134" column="1" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1309#1310#0" expanded="true" />
-            <element signature="e#1344#1345#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1426#1427#0" expanded="true" />
-            <element signature="e#1461#1462#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1584#1585#0" expanded="true" />
-            <element signature="e#1617#1618#0" expanded="true" />
-            <element signature="e#1653#1654#0" expanded="true" />
-            <element signature="e#1696#1697#0" expanded="true" />
-            <element signature="e#1738#1739#0" expanded="true" />
-            <element signature="e#2158#2164#0" expanded="true" />
-            <element signature="e#2277#2283#0" expanded="true" />
-            <element signature="e#4979#4986#0" expanded="true" />
+            <element signature="e#1303#1304#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5275974">
-          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
-          <folding>
-            <element signature="e#4944#4945#0" expanded="true" />
-            <element signature="e#4977#4978#0" expanded="true" />
-            <element signature="e#5014#5015#0" expanded="true" />
-            <element signature="e#5050#5051#0" expanded="true" />
-            <element signature="e#5080#5081#0" expanded="true" />
-            <element signature="e#5113#5114#0" expanded="true" />
-            <element signature="e#5150#5151#0" expanded="true" />
-            <element signature="e#5186#5187#0" expanded="true" />
-            <element signature="e#5216#5217#0" expanded="true" />
-            <element signature="e#5249#5250#0" expanded="true" />
-            <element signature="e#5286#5287#0" expanded="true" />
-            <element signature="e#5322#5323#0" expanded="true" />
-            <element signature="e#5352#5353#0" expanded="true" />
-            <element signature="e#5385#5386#0" expanded="true" />
-            <element signature="e#5422#5423#0" expanded="true" />
-            <element signature="e#5458#5459#0" expanded="true" />
-            <element signature="e#5668#5669#0" expanded="true" />
-            <element signature="e#5700#5701#0" expanded="true" />
-            <element signature="e#5735#5736#0" expanded="true" />
-            <element signature="e#5769#5770#0" expanded="true" />
-            <element signature="e#5798#5799#0" expanded="true" />
-            <element signature="e#5830#5831#0" expanded="true" />
-            <element signature="e#5865#5866#0" expanded="true" />
-            <element signature="e#5899#5900#0" expanded="true" />
-            <element signature="e#6975#6982#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PuzzleChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2173913">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
