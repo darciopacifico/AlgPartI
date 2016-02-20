@@ -2,175 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65004193-9927-4adf-be9e-3d3b7c9585f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BruteCollinearPoints.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FastCollinearPoints.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LabBrute.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LabFatorial.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LineSegment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Point.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PointTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/8puzzle.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/9x9_ref.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Lab.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LabMut.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SolverNovoFudido.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hammingRef_16127.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle00.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle01.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle02.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle03.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle03_solved.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle04.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle05.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle06.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle07.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle08.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle09.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle10.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle11.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle12.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle13.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle14.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle15.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle16.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle17.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle18.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle19.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle20.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle21.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle22.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle23.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle24.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle25.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle26.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle27.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle28.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle29.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-00.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-01.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-02.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-03.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-04.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-05.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-06.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-unsolvable1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-unsolvable2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle2x2-unsolvable3.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle30.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle31.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle32.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle33.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle34.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle35.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle36.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle37.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle38.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle39.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-00.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-01.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-02.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-03.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-04.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-05.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-06.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-07.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-08.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-09.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-10.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-11.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-12.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-13.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-14.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-15.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-16.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-17.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-18.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-19.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-20.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-21.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-22.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-23.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-24.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-25.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-26.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-27.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-28.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-29.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-30.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-31.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-unsolvable.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-unsolvable1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle3x3-unsolvable2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle40.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle41.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle42.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle43.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle44.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle45.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle46.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle47.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle48.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle49.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-00.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-01.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-02.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-03.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-04.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-05.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-06.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-07.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-08.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-09.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-10.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-11.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-12.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-13.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-14.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-15.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-16.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-17.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-18.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-19.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-20.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-21.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-22.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-23.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-24.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-25.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-26.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-27.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-28.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-29.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-30.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-31.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-32.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-33.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-34.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-35.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-36.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-37.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-38.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-39.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-40.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-41.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-42.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-43.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-44.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-45.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-46.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-47.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-48.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-49.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-50.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-78.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-78_calcDist.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-80.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle4x4-unsolvable.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle50.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puzzle_testeDLP.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board.java" afterPath="$PROJECT_DIR$/src/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PuzzleChecker.java" afterPath="$PROJECT_DIR$/src/PuzzleChecker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solver.java" afterPath="$PROJECT_DIR$/src/Solver.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Board$GTuple2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Board$Tuple2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Board$Tuple4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Board.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BruteCollinearPoints.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/CollinearClient.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$1GroupSegment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$GroupSegment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$MySegment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$SegmentControl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints$Slope.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPoints.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPointsGit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPointsGit2$Segment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FastCollinearPointsGit2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Lab.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LabBrute.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LabBrute.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LabFatorial.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LineSegment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Point$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Point.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PointTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PuzzleChecker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$GTuple2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$HammingBoardComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$ManhattanBoardComparator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$Node.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$NodeIterable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver$NodeIterator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Solver.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PercolatoinAssignment.iws" />
@@ -210,21 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="scratch_190" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_190">
+      <file leaf-file-name="LineSegment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LineSegment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabBrute.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LabBrute.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7777777">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state vertical-scroll-proportion="-6.814815">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -243,8 +97,8 @@
       <file leaf-file-name="PuzzleChecker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PuzzleChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2173913">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3968254">
+              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -263,15 +117,15 @@
       <file leaf-file-name="FastCollinearPoints.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FastCollinearPoints.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            <state vertical-scroll-proportion="-7.2222223">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1377#1378#0" expanded="true" />
-                <element signature="e#1420#1421#0" expanded="true" />
-                <element signature="e#1500#1501#0" expanded="true" />
-                <element signature="e#1573#1574#0" expanded="true" />
-                <element signature="e#1846#1858#0" expanded="true" />
+                <element signature="e#1376#1377#0" expanded="true" />
+                <element signature="e#1419#1420#0" expanded="true" />
+                <element signature="e#1499#1500#0" expanded="true" />
+                <element signature="e#1572#1573#0" expanded="true" />
+                <element signature="e#1845#1857#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -280,14 +134,15 @@
       <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.37037">
-              <caret line="139" column="13" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
+            <state vertical-scroll-proportion="-10.037037">
+              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#3895#3896#0" expanded="true" />
                 <element signature="e#3938#3939#0" expanded="true" />
                 <element signature="e#4047#4508#0" expanded="true" />
+                <element signature="e#4507#4508#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -296,14 +151,14 @@
       <file leaf-file-name="BruteCollinearPoints.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BruteCollinearPoints.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-74.44444">
-              <caret line="134" column="1" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
+            <state vertical-scroll-proportion="-7.7777777">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1303#1304#0" expanded="true" />
-                <element signature="e#1343#1344#0" expanded="true" />
-                <element signature="e#1423#1424#0" expanded="true" />
-                <element signature="e#1496#1497#0" expanded="true" />
+                <element signature="e#1304#1305#0" expanded="true" />
+                <element signature="e#1344#1345#0" expanded="true" />
+                <element signature="e#1424#1425#0" expanded="true" />
+                <element signature="e#1497#1498#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -349,19 +204,15 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_182" />
         <option value="$PROJECT_DIR$/src/QuickSort.java" />
         <option value="$PROJECT_DIR$/src/CollinearClient.java" />
-        <option value="$PROJECT_DIR$/src/PointTest.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_183" />
-        <option value="$PROJECT_DIR$/src/LineSegment.java" />
         <option value="$PROJECT_DIR$/src/input50.txt" />
         <option value="$PROJECT_DIR$/src/input_dlp5.txt" />
         <option value="$PROJECT_DIR$/src/input_dlp6.txt" />
-        <option value="$PROJECT_DIR$/src/LabFatorial.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_184" />
         <option value="$PROJECT_DIR$/src/inarow.txt" />
         <option value="$PROJECT_DIR$/src/random.txt" />
         <option value="$PROJECT_DIR$/src/FastCollinearPointsGit.java" />
         <option value="$PROJECT_DIR$/src/FastCollinearPointsGit2.java" />
-        <option value="$PROJECT_DIR$/src/LabBrute.java" />
         <option value="$PROJECT_DIR$/src/puzzle04.txt" />
         <option value="$PROJECT_DIR$/src/puzzle03.txt" />
         <option value="$PROJECT_DIR$/src/puzzle03_solved.txt" />
@@ -374,11 +225,15 @@
         <option value="$PROJECT_DIR$/src/puzzle3x3-unsolvable1.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_190" />
         <option value="$PROJECT_DIR$/src/SolverNovoFudido.java" />
-        <option value="$PROJECT_DIR$/src/FastCollinearPoints.java" />
-        <option value="$PROJECT_DIR$/src/BruteCollinearPoints.java" />
-        <option value="$PROJECT_DIR$/src/Point.java" />
         <option value="$PROJECT_DIR$/src/Solver.java" />
         <option value="$PROJECT_DIR$/src/Board.java" />
+        <option value="$PROJECT_DIR$/src/BruteCollinearPoints.java" />
+        <option value="$PROJECT_DIR$/src/FastCollinearPoints.java" />
+        <option value="$PROJECT_DIR$/src/LabBrute.java" />
+        <option value="$PROJECT_DIR$/src/LabFatorial.java" />
+        <option value="$PROJECT_DIR$/src/LineSegment.java" />
+        <option value="$PROJECT_DIR$/src/Point.java" />
+        <option value="$PROJECT_DIR$/src/PointTest.java" />
         <option value="$PROJECT_DIR$/src/PuzzleChecker.java" />
       </list>
     </option>
@@ -477,6 +332,22 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/findbugs.xml" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="200" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="202" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="206" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1000" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="200" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="202" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="206" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1000" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -987,12 +858,12 @@
       <workItem from="1455827971535" duration="4405000" />
       <workItem from="1455839016228" duration="11742000" />
       <workItem from="1455855098309" duration="8932000" />
-      <workItem from="1455907076139" duration="34868000" />
+      <workItem from="1455907076139" duration="35903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231778000" />
+    <option name="totallyTimeSpent" value="232813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -1006,12 +877,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22879177" sideWeight="0.5028612" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297414" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36246786" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="-21" y="50" width="1442" height="539" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5689655" sideWeight="0.49713877" order="12" side_tool="false" content_ui="tabs" x="0" y="23" width="1434" height="873" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5689655" sideWeight="0.49713877" order="12" side_tool="false" content_ui="tabs" x="0" y="23" width="1434" height="873" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15750916" sideWeight="0.6940874" order="0" side_tool="false" content_ui="combo" x="-251" y="23" width="413" height="873" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15750916" sideWeight="0.6940874" order="0" side_tool="false" content_ui="combo" x="-251" y="23" width="413" height="873" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1981402" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35021552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="118" y="54" width="1154" height="454" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1122,62 +993,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FastCollinearPoints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1377#1378#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-            <element signature="e#1500#1501#0" expanded="true" />
-            <element signature="e#1573#1574#0" expanded="true" />
-            <element signature="e#1846#1858#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LabBrute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7777777">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.37037">
-          <caret line="139" column="13" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3895#3896#0" expanded="true" />
-            <element signature="e#3938#3939#0" expanded="true" />
-            <element signature="e#4047#4508#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Solver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5555556">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BruteCollinearPoints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-74.44444">
-          <caret line="134" column="1" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
-            <element signature="e#1343#1344#0" expanded="true" />
-            <element signature="e#1423#1424#0" expanded="true" />
-            <element signature="e#1496#1497#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1189,10 +1009,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BruteCollinearPoints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7777777">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
+            <element signature="e#1424#1425#0" expanded="true" />
+            <element signature="e#1497#1498#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FastCollinearPoints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.2222223">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+            <element signature="e#1419#1420#0" expanded="true" />
+            <element signature="e#1499#1500#0" expanded="true" />
+            <element signature="e#1572#1573#0" expanded="true" />
+            <element signature="e#1845#1857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LineSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.814815">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.037037">
+          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3895#3896#0" expanded="true" />
+            <element signature="e#3938#3939#0" expanded="true" />
+            <element signature="e#4047#4508#0" expanded="true" />
+            <element signature="e#4507#4508#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PuzzleChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2173913">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3968254">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
           <folding />
         </state>
       </provider>
