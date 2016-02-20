@@ -27,6 +27,8 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.Iterator;
+
 public class PuzzleChecker {
 
     public static void main(String[] args) {
@@ -49,16 +51,18 @@ public class PuzzleChecker {
             Solver solver = new Solver(initial);
             StdOut.println(filename + ": " + solver.moves());
             StdOut.println(filename + " solvable : " + solver.isSolvable());
-/*
 
+    /*
             StdOut.println("PuzzleChecker moves:");
             Iterator<Board> it = solver.solution().iterator();
 
+            int count=0;
             while (it.hasNext()) {
                 StdOut.print(it.next());
+                count++;
             }
+            StdOut.println("contagem moves ="+count);
 */
-
         }
     }
 }

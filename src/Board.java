@@ -2,17 +2,16 @@ import edu.princeton.cs.algs4.LinkedBag;
 
 public class Board {
 
-    //protected int moves = 0;
     private final int[][] blocksx;
 
-    private Tuple2 zeroRC;
+    //private Tuple2 zeroRC;
 
-    private Integer hamming = null;
-    private Integer manhattan = null;
-    private Boolean isGoalx;
+    private int hamming = 0;
+    private int manhattan = 0;
 
     /**
-     * construct a board from an N-by-N array of blocks (where blocks[i][j] = block in row i, column j)
+     * construct a board from an N-by-N array
+     * of blocks (where blocks[i][j] = block in row i, column j)
      */
     public Board(int[][] pblocks) {
         this(pblocks, null);
@@ -21,7 +20,7 @@ public class Board {
     private Board(int[][] pblocks, Tuple2 zeroRC) {
         if (pblocks == null) throw new java.lang.NullPointerException("null block array");
 
-        this.zeroRC = zeroRC;
+        //this.zeroRC = zeroRC;
 
         int[][] localBlocks = deepCopy(pblocks);
 
@@ -43,8 +42,7 @@ public class Board {
      */
     public int hamming() {
 
-        if (this.hamming == null) {
-            this.hamming = 0;
+        if (this.hamming == 0) {
             for (int r = 0; r < blocksx.length; r++) {
                 for (int c = 0; c < blocksx[r].length; c++) {
 
@@ -61,7 +59,7 @@ public class Board {
             }
         }
 
-        return this.hamming; // + this.moves;
+        return this.hamming;
 
     }
 
@@ -71,8 +69,7 @@ public class Board {
     public int manhattan() {
 
 
-        if (this.manhattan == null) {
-            this.manhattan = 0;
+        if (this.manhattan == 0) {
             for (int r = 0; r < blocksx.length; r++) {
                 for (int c = 0; c < blocksx[r].length; c++) {
                     int dimension = this.dimension();
@@ -85,9 +82,6 @@ public class Board {
 
                         int distance = calcDistance(tEncontrado, new Tuple2(r, c));
 
-                        //StdOut.println("Encontrado "+blocks[r][c]+" em r="+r+" c="+c+" este deveria estar em r="+tEncontrado.r+" c="+tEncontrado.c+" distancia="+distance );
-
-
                         this.manhattan = this.manhattan + distance;
                     }
                 }
@@ -95,11 +89,11 @@ public class Board {
         }
 
 
-        return this.manhattan; // + this.moves;
+        return this.manhattan;
     }
 
     private int calcDistance(Tuple2 expTup, Tuple2 currTup) {
-        return Math.abs(expTup.c - currTup.c) + Math.abs(expTup.r - currTup.r);
+        return Math.abs(expTup.getC() - currTup.getC()) + Math.abs(expTup.getR() - currTup.getR());
 
     }
 
@@ -150,9 +144,9 @@ public class Board {
 
         Tuple4 t4 = nonZeroIndex(newBlocks);
 
-        int swap = newBlocks[t4.r1][t4.c1];
-        newBlocks[t4.r1][t4.c1] = newBlocks[t4.r2][t4.c2];
-        newBlocks[t4.r2][t4.c2] = swap;
+        int swap = newBlocks[t4.getR1()][t4.getC1()];
+        newBlocks[t4.getR1()][t4.getC1()] = newBlocks[t4.getR2()][t4.getC2()];
+        newBlocks[t4.getR2()][t4.getC2()] = swap;
 
         return new Board(newBlocks, null);
     }
@@ -186,35 +180,76 @@ public class Board {
      * tuple class
      */
     private class Tuple4 {
+        private int r1;
+        private int c1;
+        private int r2;
+        private int c2;
+
         public Tuple4(int r1, int c1, int r2, int c2) {
-            this.r1 = r1;
-            this.c1 = c1;
-            this.r2 = r2;
-            this.c2 = c2;
+            this.setR1(r1);
+            this.setC1(c1);
+            this.setR2(r2);
+            this.setC2(c2);
         }
 
-        public int r1, c1, r2, c2;
+        public int getR1() {
+            return r1;
+        }
+
+        public void setR1(int r1) {
+            this.r1 = r1;
+        }
+
+        public int getC1() {
+            return c1;
+        }
+
+        public void setC1(int c1) {
+            this.c1 = c1;
+        }
+
+        public int getR2() {
+            return r2;
+        }
+
+        public void setR2(int r2) {
+            this.r2 = r2;
+        }
+
+        public int getC2() {
+            return c2;
+        }
+
+        public void setC2(int c2) {
+            this.c2 = c2;
+        }
     }
 
     private class Tuple2 {
-        public int r, c;
+        private int r;
+        private int c;
 
         public Tuple2(int r, int c) {
+            this.setR(r);
+            this.setC(c);
+        }
+
+        public int getR() {
+            return r;
+        }
+
+        public void setR(int r) {
             this.r = r;
+        }
+
+        public int getC() {
+            return c;
+        }
+
+        public void setC(int c) {
             this.c = c;
         }
     }
-
-    private class GTuple2<R, C> {
-        public R r;
-        public C c;
-
-        public GTuple2(R r, C c) {
-            this.r = r;
-            this.c = c;
-        }
-    }
-
 
     /**
      * does this board equal y?
@@ -273,7 +308,7 @@ public class Board {
 
         for (int r = 0; r < pblocks.length; r++) {
             for (int c = 0; c < pblocks[r].length; c++) {
-                newBlock[r][c] = new Integer(pblocks[r][c]);
+                newBlock[r][c] = pblocks[r][c];
             }
         }
 
@@ -289,12 +324,12 @@ public class Board {
      * @return
      */
     private Board createNeigBoard(int[][] pBlocks, Tuple2 cellZero, Tuple2 neigCell) {
-        assert pBlocks[neigCell.r][neigCell.c] != 0;
-        assert pBlocks[cellZero.r][cellZero.c] == 0;
+        assert pBlocks[neigCell.getR()][neigCell.getC()] != 0;
+        assert pBlocks[cellZero.getR()][cellZero.getC()] == 0;
 
-        int zeroCell = pBlocks[cellZero.r][cellZero.c];
-        pBlocks[cellZero.r][cellZero.c] = pBlocks[neigCell.r][neigCell.c];
-        pBlocks[neigCell.r][neigCell.c] = zeroCell;
+        int zeroCell = pBlocks[cellZero.getR()][cellZero.getC()];
+        pBlocks[cellZero.getR()][cellZero.getC()] = pBlocks[neigCell.getR()][neigCell.getC()];
+        pBlocks[neigCell.getR()][neigCell.getC()] = zeroCell;
 
         Board board = new Board(pBlocks, neigCell);
 
@@ -311,20 +346,20 @@ public class Board {
 
         LinkedBag<Tuple2> neigs = new LinkedBag<Tuple2>();
 
-        if (rc.r != 0) { // it's a first row
-            neigs.add(new Tuple2(rc.r - 1, rc.c));
+        if (rc.getR() != 0) { // it's a first row
+            neigs.add(new Tuple2(rc.getR() - 1, rc.getC()));
         }
 
-        if (rc.r != this.dimension() - 1) { // it's a first row
-            neigs.add(new Tuple2(rc.r + 1, rc.c));
+        if (rc.getR() != this.dimension() - 1) { // it's a first row
+            neigs.add(new Tuple2(rc.getR() + 1, rc.getC()));
         }
 
-        if (rc.c != 0) { // it's a first row
-            neigs.add(new Tuple2(rc.r, rc.c - 1));
+        if (rc.getC() != 0) { // it's a first row
+            neigs.add(new Tuple2(rc.getR(), rc.getC() - 1));
         }
 
-        if (rc.c != this.dimension() - 1) { // it's a first row
-            neigs.add(new Tuple2(rc.r, rc.c + 1));
+        if (rc.getC() != this.dimension() - 1) { // it's a first row
+            neigs.add(new Tuple2(rc.getR(), rc.getC() + 1));
         }
 
         return neigs;
@@ -344,8 +379,7 @@ public class Board {
         for (int r = 0; r < blocks.length; r++) {
             for (int c = 0; c < blocks[r].length; c++) {
                 if (blocks[r][c] == 0) {
-                    this.zeroRC = new Tuple2(r, c);
-                    return this.zeroRC;
+                    return new Tuple2(r, c);
                 }
             }
         }

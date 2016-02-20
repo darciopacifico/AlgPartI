@@ -95,54 +95,7 @@ public class SolverNovoFudido {
         this.solvable = solver(minPqInit, minPqTwin);
     }
 
-
-    private boolean solver_new(MinPQ<Node> minPq,MinPQ<Node> minPqTwin) {
-
-
-        while (true) {
-
-            if (!minPq.isEmpty()) {
-                Node min = minPq.delMin();
-                if (min.board.isGoal()) {
-                    this.endNode = min;
-
-                    Node startNode = getStartNode(this.endNode);
-
-                    if (startNode.board.equals(this.initial)) {
-                        return true;
-
-                    } else if (startNode.board.equals(this.twin)) {
-                        return false;
-
-                    } else {
-                        //wtf!!
-                        assert false;
-                        StdOut.println("Start node supose to be equal to initial or twin node!!");
-                        return false;
-
-                    }
-                }
-                fillNeigs(minPq, min);
-            } else {
-                this.endNode = null;
-            }
-
-
-        }
-    }
-
-    private Node getStartNode(Node endNode) {
-        if (endNode.prev == null || endNode.prev.board == null) {
-            return endNode;
-        } else {
-            return getStartNode(endNode.prev);
-        }
-    }
-
-
     private boolean solver(MinPQ<Node> minPqInit, MinPQ<Node> minPqTwin) {
-
-        long count = 0;
 
         while (true) {
 

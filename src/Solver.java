@@ -11,7 +11,7 @@ public class Solver {
     private Board twin;
     private Node endNode;
 
-    private Boolean solvable;
+    private boolean solvable;
 
     /**
      * Hamming comparator
@@ -21,15 +21,9 @@ public class Solver {
         @Override
         public int compare(Node o1, Node o2) {
 
-            int diff = o1.board.hamming() - o2.board.hamming();
+            int diff = (o1.getBoard().hamming() + o1.getMoves()) - (o2.getBoard().hamming() + o2.getMoves());
 
-            if (diff == 0) {
-                return o1.moves - o2.moves;
-            } else {
-                return diff;
-
-            }
-
+            return diff;
         }
     }
 
@@ -41,31 +35,45 @@ public class Solver {
         @Override
         public int compare(Node o1, Node o2) {
 
-            int diff = o1.board.manhattan() - o2.board.manhattan();
+            int diff = (o1.getBoard().manhattan() + o1.getMoves()) - (o2.getBoard().manhattan() + o2.getMoves());
 
-            if (diff == 0) {
-                return o1.moves - o2.moves;
-            } else {
-                return diff;
 
-            }
-
+            return diff;
         }
     }
 
     private class Node {
+        private Node prev;
+        private Board board;
+        private int moves;
 
-        public Node prev;
+        public Node(Node prev, Board board, int moves) {
+            this.setPrev(prev);
+            this.setBoard(board);
+            this.setMoves(moves);
+        }
 
-        public Node next;
+        public Node getPrev() {
+            return prev;
+        }
 
-        public Board board;
-        public int moves;
-
-        public Node(Node prev, Board board, /*Node next,*/ int moves) {
+        public void setPrev(Node prev) {
             this.prev = prev;
-            //this.next = next;
+        }
+
+        public Board getBoard() {
+            return board;
+        }
+
+        public void setBoard(Board board) {
             this.board = board;
+        }
+
+        public int getMoves() {
+            return moves;
+        }
+
+        public void setMoves(int moves) {
             this.moves = moves;
         }
     }
@@ -77,10 +85,10 @@ public class Solver {
      */
     public Solver(Board board) {
 
+        if (board == null) throw new java.lang.NullPointerException("null Board");
+
         this.initial = board;
         this.twin = initial.twin();
-
-        if (this.initial == null) throw new java.lang.NullPointerException("null Board");
 
 
         Node tup1 = new Node(new Node(null, null, 0), this.initial, 0);
@@ -104,7 +112,7 @@ public class Solver {
 
             if (!minPqInit.isEmpty()) {
                 Node minInit = minPqInit.delMin();
-                if (minInit.board.isGoal()) {
+                if (minInit.getBoard().isGoal()) {
                     this.endNode = minInit;
                     return true;
                 }
@@ -116,7 +124,7 @@ public class Solver {
 
             if (!minPqTwin.isEmpty()) {
                 Node minTwin = minPqTwin.delMin();
-                if (minTwin.board.isGoal()) {
+                if (minTwin.getBoard().isGoal()) {
                     this.endNode = minTwin;
                     return false;
                 }
@@ -125,7 +133,7 @@ public class Solver {
                 this.endNode = null;
             }
 
-            if(minPqInit.isEmpty() || minPqTwin.isEmpty()){
+            if (minPqInit.isEmpty() || minPqTwin.isEmpty()) {
                 return false;
             }
 
@@ -133,24 +141,21 @@ public class Solver {
     }
 
     private void fillNeigs(MinPQ<Node> minPQ, Node node) {
-        Iterable<Board> neigBoards = node.board.neighbors();
+        Iterable<Board> neigBoards = node.getBoard().neighbors();
 
         for (Board neigBoard : neigBoards) {
             if (!wasVisited(node, neigBoard)) {
-                minPQ.insert(new Node(node, neigBoard, node.moves + 1));
+                minPQ.insert(new Node(node, neigBoard, node.getMoves() + 1));
             }
         }
     }
 
     private boolean wasVisited(Node node, Board neigBoard) {
-
         if (node == null) {
-            //StdOut.println("not visited");
             return false;
         } else {
-            return neigBoard.equals(node.board) || wasVisited(node.prev, neigBoard);
+            return neigBoard.equals(node.getBoard()) || wasVisited(node.getPrev(), neigBoard);
         }
-        //return node.prev == null || !neigBoard.equals(node.prev.board);
     }
 
 
@@ -172,7 +177,7 @@ public class Solver {
     public int moves() {
 
         if (this.isSolvable()) {
-            return this.endNode.moves;
+            return this.endNode.getMoves();
         } else {
             return -1;
         }
@@ -257,16 +262,14 @@ public class Solver {
 
         @Override
         public boolean hasNext() {
-            return node != null && node.board != null;
+            return node != null && node.getBoard() != null;
         }
 
         @Override
         public Board next() {
             Node currNode = node;
-
-            this.node = node.prev;
-
-            return currNode.board;
+            this.node = node.getPrev();
+            return currNode.getBoard();
         }
     }
 
