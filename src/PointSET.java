@@ -1,11 +1,17 @@
-import edu.princeton.cs.algs4.*;
+import edu.princeton.cs.algs4.Point2D;
+import edu.princeton.cs.algs4.RectHV;
+import edu.princeton.cs.algs4.StdDraw;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.TreeSet;
 
 /**
  * PointSET implementation
  * Created by dpacif1 on 2/23/16.
  */
 public class PointSET {
-    private SET<Point2D> pointSet = new SET<Point2D>();
+    private TreeSet<Point2D> pointSet = new TreeSet<Point2D>();
 
     /**
      * construct an empty set of points
@@ -44,20 +50,16 @@ public class PointSET {
         if (p == null) {
             throw new java.lang.NullPointerException("p is null");
         }
-        return this.contains(p);
+        return this.pointSet.contains(p);
     }
 
     /**
      * draw all points to standard draw
      */
     public void draw() {
-        StdDraw.show(0);
-        StdDraw.clear();
-
         for (Point2D p : this.pointSet) {
             StdDraw.point(p.x(), p.y());
         }
-
     }
 
     /**
@@ -68,11 +70,11 @@ public class PointSET {
             throw new java.lang.NullPointerException("rect is null");
         }
 
-        LinkedQueue q = new LinkedQueue<Point2D>();
+        List<Point2D> q = new LinkedList<Point2D>();
 
         for (Point2D p : pointSet) {
             if (rect.contains(p)) {
-                q.enqueue(q);
+                q.add(p);
             }
         }
 

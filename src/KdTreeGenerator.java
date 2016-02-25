@@ -20,6 +20,9 @@ import edu.princeton.cs.algs4.StdOut;
 public class KdTreeGenerator {
 
     public static void main(String[] args) {
+
+        args = new String[]{"1000"};
+
         int N = Integer.parseInt(args[0]);
         for (int i = 0; i < N; i++) {
             double x = StdRandom.uniform(0.0, 1.0);

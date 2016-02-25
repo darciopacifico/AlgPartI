@@ -18,6 +18,9 @@ import edu.princeton.cs.algs4.StdDraw;
 public class NearestNeighborVisualizer {
 
     public static void main(String[] args) {
+
+        args = new String[]{"/Users/dpacif1/scala/PercolatoinAssignment/src/circle100.txt"};
+
         String filename = args[0];
         In in = new In(filename);
 
