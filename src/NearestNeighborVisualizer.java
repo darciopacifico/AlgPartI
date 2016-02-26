@@ -20,6 +20,7 @@ public class NearestNeighborVisualizer {
     public static void main(String[] args) {
 
         args = new String[]{"/Users/dpacif1/scala/PercolatoinAssignment/src/circle100.txt"};
+        args = new String[]{"/Users/dpacif1/scala/PercolatoinAssignment/src/input10K.txt"};
 
         String filename = args[0];
         In in = new In(filename);
@@ -57,7 +58,7 @@ public class NearestNeighborVisualizer {
             StdDraw.setPenRadius(.02);
 
             // draw in blue the nearest neighbor (using kd-tree algorithm)
-            StdDraw.setPenColor(StdDraw.BLUE);
+            StdDraw.setPenColor(StdDraw.GREEN);
             kdtree.nearest(query).draw();
             StdDraw.show(0);
             StdDraw.show(40);
