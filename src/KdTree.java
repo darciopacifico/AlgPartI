@@ -213,74 +213,48 @@ public class KdTree {
      * @return
      */
     private Node nearest(Point2D pRef, Node node, Node champion) {
-
-        if (node == null) {
-            return champion;
-        }
-
-        /*
-        if(node.p.equals(pRef)){
-            return node;
-        }*/
-
-        if (pRef.distanceTo(node.p) < pRef.distanceTo(champion.p)) {
-            champion = node;
-        }
-
+        if (node == null) return champion;
+        if (node.p.equals(pRef)) return node;
+        if (pRef.distanceTo(node.p) < pRef.distanceTo(champion.p)) champion = node;
 
         if (node.right != null && ((node.isHoriz && pRef.x() >= node.p.x()) || (!node.isHoriz && pRef.y() >= node.p.y()))) {
-
             if (pRef.distanceTo(node.right.p) < pRef.distanceTo(champion.p)) {
                 champion = node.right;
             }
 
             champion = nearest(pRef, node.right, champion);
 
-            if (node.left != null && distancePossible(pRef, champion, node, LEFT) < pRef.distanceTo(champion.p)) {
+            if (node.left != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.p)) {
                 champion = nearest(pRef, node.left, champion);
-
             }
 
 
         } else {
-
             if (node.left != null && pRef.distanceTo(node.left.p) < pRef.distanceTo(champion.p)) {
                 champion = node.left;
             }
 
             champion = nearest(pRef, node.left, champion);
 
-            if (node.right != null && distancePossible(pRef, champion, node, RIGHT) < pRef.distanceTo(champion.p)) {
+            if (node.right != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.p)) {
                 champion = nearest(pRef, node.right, champion);
-
             }
-
-
         }
-
 
         return champion;
-
     }
 
-    private double distancePossible(Point2D pRef, Node champion, Node node, int side) {
-
-        double recX1 = 0;
-        double recY1 = 0;
+    private double lowerPossibleDist(Point2D pRef, Node node) {
+        double lowestPtX = pRef.x();
+        double lowestPtY = pRef.y();
 
         if (node.isHoriz) {
-
-        }
-
-        if (side == RIGHT) {
-
-
+            lowestPtX = node.p.x();
         } else {
-
-
+            lowestPtY = node.p.y();
         }
 
-        return Double.NEGATIVE_INFINITY;
+        return new Point2D(lowestPtX, lowestPtY).distanceTo(pRef);
     }
 
 
