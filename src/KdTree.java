@@ -1,11 +1,13 @@
 import edu.princeton.cs.algs4.Point2D;
 import edu.princeton.cs.algs4.RectHV;
 import edu.princeton.cs.algs4.StdDraw;
-import edu.princeton.cs.algs4.StdOut;
 
 import java.awt.*;
+import java.util.Collection;
+import java.util.LinkedList;
 
 /**
+ * KDtree implementation
  * Created by dpacif1 on 2/23/16.
  */
 public class KdTree {
@@ -22,8 +24,7 @@ public class KdTree {
     /**
      * Basic node representantion
      */
-    private class Node {
-
+    private static class Node {
         Point2D p;
         boolean isHoriz;
         Node left;
@@ -73,6 +74,12 @@ public class KdTree {
 
     }
 
+    /**
+     * @param p
+     * @param node
+     * @param isHoriz
+     * @return
+     */
     private Node insert(Point2D p, Node node, boolean isHoriz) {
 
         if (node == null) {
@@ -86,11 +93,16 @@ public class KdTree {
 
         if ((node.isHoriz && p.x() >= node.p.x()) || (!node.isHoriz && p.y() >= node.p.y())) {
             node.right = insert(p, node.right, !node.isHoriz);
+
         } else /*if ((node.isHoriz && p.x() < node.p.x()) || (!node.isHoriz && p.y() < node.p.y()))*/ {
             node.left = insert(p, node.left, !node.isHoriz);
         }
 
         return node;
+    }
+
+    private RectHV takeSide(Point2D p, int right) {
+        return null;
     }
 
 
@@ -104,7 +116,11 @@ public class KdTree {
         return contains(this.root, p);
     }
 
-
+    /**
+     * @param root
+     * @param p
+     * @return
+     */
     private boolean contains(Node root, Point2D p) {
 
         if (root == null) {
@@ -126,57 +142,76 @@ public class KdTree {
      * draw all points to standard draw
      */
     public void draw() {
-        draw(null, this.root);
+        Node fakePar = new Node(new Point2D(1, 1), false);
+        draw(fakePar, fakePar, this.root);
     }
 
-    private void draw(Node parent, Node node) {
+
+    /**
+     * @param par
+     * @param node
+     */
+    private void draw(Node parPar, Node par, Node node) {
         if (node != null) {
             drawPoint(node);
-            if (node.isHoriz) {
-                drawVerticalLine(parent, node);
-            } else {
-                drawHorizontalLine(parent, node);
-            }
-            draw(node, node.left);
-            draw(node, node.right);
+
+            drawSplit(parPar, par, node);
+            drawSplit(parPar, par, node);
+
+            draw(par, node, node.left);
+            draw(par, node, node.right);
+
         }
     }
 
-    private void drawVerticalLine(Node parent, Node node) {
+
+    private void drawSplit(Node parPar, Node par, Node node) {
+        StdDraw.setPenRadius();
+
+        if (node == null) {
+            return;
+        }
 
         double startY = 0d;
         double endY = 1d;
 
-        if (parent != null) {
-            if (node.p.y() > parent.p.y()) {
-                startY = parent.p.y();
-            } else {
-                endY = parent.p.y();
-            }
-        }
-
-        StdDraw.setPenRadius();
-        StdDraw.setPenColor(Color.RED);
-        StdDraw.line(node.p.x(), startY, node.p.x(), endY);
-    }
-
-    private void drawHorizontalLine(Node parent, Node node) {
         double startX = 0d;
         double endX = 1d;
 
-        if (parent != null) {
-            if (node.p.x() > parent.p.x()) {
-                startX = parent.p.x();
-            } else {
-                endX = parent.p.x();
-            }
-        }
+        if (node.isHoriz) {
+            if (par != null) {
+                if (node.p.y() > par.p.y()) {
+                    startY = par.p.y();
 
-        StdDraw.setPenRadius();
-        StdDraw.setPenColor(Color.GREEN);
-        StdDraw.line(startX, node.p.y(), endX, node.p.y());
+                    //endY = parPar.p.y();
+                } else {
+                    //startY = parPar.p.y();
+                    endY = par.p.y();
+                }
+            }
+
+            StdDraw.setPenColor(Color.RED);
+            StdDraw.line(node.p.x(), startY, node.p.x(), endY);
+        } else {
+            if (par != null) {
+                if (node.p.x() > par.p.x()) {
+                    startX = par.p.x();
+                    //endX = parPar.p.x();
+                } else {
+                    endX = par.p.x();
+                    //startX = parPar.p.x();
+                }
+            }
+
+            StdDraw.setPenColor(Color.GREEN);
+            StdDraw.line(startX, node.p.y(), endX, node.p.y());
+        }
     }
 
+
+    /**
+     * @param node
+     */
     private void drawPoint(Node node) {
         StdDraw.setPenRadius(.03);
         StdDraw.setPenColor(Color.BLACK);
@@ -184,30 +219,72 @@ public class KdTree {
     }
 
     /**
-     * all points that are inside the rectangle
+     * All points that are inside the rectangle
      */
     public Iterable<Point2D> range(RectHV rect) {
         if (rect == null) {
             throw new java.lang.NullPointerException("rect is null");
         }
 
-        return null;
-
+        return range(rect, this.root, new LinkedList<Point2D>());
     }
 
     /**
-     * a nearest neighbor in the set to point p; null if the set is empty
+     * Nearest point
+     *
+     * @param rect
+     * @param node
+     * @return
+     */
+    private Collection<Point2D> range(RectHV rect, Node node, Collection<Point2D> agg) {
+
+        if (node == null) {
+            return agg;
+        } else if (rect.contains(node.p)) {
+            agg.add(node.p);
+        }
+
+        if (layAllOverRightSide(rect, node)) { // rec lay all over right side
+            range(rect, node.right, agg);
+
+        } else if (layAllOverLeftSide(rect, node)) { // rec lay all over left side
+            range(rect, node.left, agg);
+
+        } else { // rec intersect split line
+
+            range(rect, node.right, agg);
+            range(rect, node.left, agg);
+        }
+
+        return agg;
+    }
+
+    private boolean layAllOverLeftSide(RectHV rect, Node node) {
+        return (node.isHoriz && rect.xmax() < node.p.x() && rect.xmin() < node.p.x()) || (!node.isHoriz && rect.ymax() < node.p.y() && rect.ymin() < node.p.y());
+    }
+
+    private boolean layAllOverRightSide(RectHV rect, Node node) {
+        return (node.isHoriz && rect.xmax() >= node.p.x() && rect.xmin() >= node.p.x()) || (!node.isHoriz && rect.ymax() >= node.p.y() && rect.ymin() >= node.p.y());
+    }
+
+
+    /**
+     * A nearest neighbor in the set to point p; null if the set is empty
      */
     public Point2D nearest(Point2D p) {
         if (p == null) {
             throw new java.lang.NullPointerException("p is null");
         }
+        if (this.isEmpty()) {
+            return null;
+        }
 
         return nearest(p, this.root, this.root).p;
     }
 
-
     /**
+     * Nearest point
+     *
      * @param pRef
      * @param node
      * @return
@@ -228,7 +305,6 @@ public class KdTree {
                 champion = nearest(pRef, node.left, champion);
             }
 
-
         } else {
             if (node.left != null && pRef.distanceTo(node.left.p) < pRef.distanceTo(champion.p)) {
                 champion = node.left;
@@ -244,6 +320,13 @@ public class KdTree {
         return champion;
     }
 
+    /**
+     * Return the lowest possible distante to some node division
+     *
+     * @param pRef
+     * @param node
+     * @return
+     */
     private double lowerPossibleDist(Point2D pRef, Node node) {
         double lowestPtX = pRef.x();
         double lowestPtY = pRef.y();
@@ -257,76 +340,9 @@ public class KdTree {
         return new Point2D(lowestPtX, lowestPtY).distanceTo(pRef);
     }
 
-
-    private boolean isWorthGoLeft(Point2D pRef, Node champion, Node node) {
-        if (node.isHoriz) {
-            assert pRef.x() > node.p.x(); // pRef must be in right side of node
-        } else {
-            assert pRef.y() > node.p.y();// pRef must be in right side of node
-        }
-
-        return false;
-    }
-
-
-    private boolean isWorthGoRight(Point2D pRef, Node champion, Node node) {
-        if (node.isHoriz) {
-            assert pRef.x() > node.p.x(); // pRef must be in right side of node
-        } else {
-            assert pRef.y() > node.p.y();// pRef must be in right side of node
-        }
-
-        return false;
-    }
-
-
-    private boolean layRightSide(Point2D pRef, Node node) {
-        if (node.right == null) {
-            return false;
-        }
-
-        if (node.isHoriz) {
-            return pRef.x() > node.p.x();
-        } else {
-            return pRef.y() > node.p.y();
-        }
-    }
-
-    private boolean layLeftSide(Point2D pRef, Node node) {
-        if (node.left == null) {
-            return false;
-        }
-
-        if (node.isHoriz) {
-            return pRef.x() < node.p.x();
-        } else {
-            return pRef.y() < node.p.y();
-        }
-    }
-
-
     /**
      * unit testing of the methods (optional)
      */
     public static void main(String[] args) {
-
-        KdTree kdTree = new KdTree();
-
-        Point2D p1 = new Point2D(234, 789);
-        Point2D p2 = new Point2D(756, 568);
-        Point2D p3 = new Point2D(156, 435);
-        Point2D p4 = new Point2D(186, 123);
-
-        kdTree.insert(p1);
-        kdTree.insert(p2);
-        kdTree.insert(p3);
-        kdTree.insert(p4);
-
-        StdOut.println(kdTree.contains(p1));
-        StdOut.println(kdTree.contains(p2));
-        StdOut.println(kdTree.contains(p3));
-        StdOut.println(kdTree.contains(p4));
-
-
     }
 }

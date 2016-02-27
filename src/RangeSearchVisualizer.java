@@ -1,15 +1,14 @@
 /******************************************************************************
- *  Compilation:  javac RangeSearchVisualizer.java
- *  Execution:    java RangeSearchVisualizer input.txt
- *  Dependencies: PointSET.java KdTree.java
- *
- *  Read points from a file (specified as a command-line arugment) and
- *  draw to standard draw. Also draw all of the points in the rectangle
- *  the user selects by dragging the mouse.
- *
- *  The range search results using the brute-force algorithm are drawn
- *  in red; the results using the kd-tree algorithms are drawn in blue.
- *
+ * Compilation:  javac RangeSearchVisualizer.java
+ * Execution:    java RangeSearchVisualizer input.txt
+ * Dependencies: PointSET.java KdTree.java
+ * <p/>
+ * Read points from a file (specified as a command-line arugment) and
+ * draw to standard draw. Also draw all of the points in the rectangle
+ * the user selects by dragging the mouse.
+ * <p/>
+ * The range search results using the brute-force algorithm are drawn
+ * in red; the results using the kd-tree algorithms are drawn in blue.
  ******************************************************************************/
 
 import edu.princeton.cs.algs4.In;
@@ -20,6 +19,8 @@ import edu.princeton.cs.algs4.StdDraw;
 public class RangeSearchVisualizer {
 
     public static void main(String[] args) {
+
+        args = new String[]{"/Users/dpacif1/scala/PercolatoinAssignment/src/input10K.txt"};
 
         String filename = args[0];
         In in = new In(filename);
@@ -72,7 +73,7 @@ public class RangeSearchVisualizer {
 
 
             RectHV rect = new RectHV(Math.min(x0, x1), Math.min(y0, y1),
-                                     Math.max(x0, x1), Math.max(y0, y1));
+                    Math.max(x0, x1), Math.max(y0, y1));
             // draw the points
             StdDraw.clear();
             StdDraw.setPenColor(StdDraw.BLACK);
