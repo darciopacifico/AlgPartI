@@ -2,45 +2,19 @@ import edu.princeton.cs.algs4.Point2D;
 import edu.princeton.cs.algs4.RectHV;
 import edu.princeton.cs.algs4.StdDraw;
 
-import java.awt.*;
 import java.util.Collection;
 import java.util.LinkedList;
+
+//import java.awt.*;
 
 /**
  * KDtree implementation
  * Created by dpacif1 on 2/23/16.
  */
 public class KdTree {
-
-    private static final int LEFT = -1;
-    private static final int RIGHT = 1;
     private int size = 0;
 
-    private static final boolean VERT_Y = false;
-    private static final boolean HORI_X = true;
-
     private Node root;
-
-    /**
-     * Basic node representantion
-     */
-    private static class Node {
-        Point2D p;
-        boolean isHoriz;
-        Node left;
-        Node right;
-
-        public Node(Point2D p, boolean isHoriz) {
-            this(p, isHoriz, null, null);
-        }
-
-        public Node(Point2D p, boolean isHoriz, Node left, Node right) {
-            this.isHoriz = isHoriz;
-            this.p = p;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     /**
      * construct an empty set of points
@@ -87,15 +61,15 @@ public class KdTree {
             return new Node(p, isHoriz);
         }
 
-        if (node.p.equals(p)) {
+        if (node.getP().equals(p)) {
             return node;
         }
 
-        if ((node.isHoriz && p.x() >= node.p.x()) || (!node.isHoriz && p.y() >= node.p.y())) {
-            node.right = insert(p, node.right, !node.isHoriz);
+        if ((node.isHoriz() && p.x() >= node.getP().x()) || (!node.isHoriz() && p.y() >= node.getP().y())) {
+            node.setRight(insert(p, node.getRight(), !node.isHoriz()));
 
         } else /*if ((node.isHoriz && p.x() < node.p.x()) || (!node.isHoriz && p.y() < node.p.y()))*/ {
-            node.left = insert(p, node.left, !node.isHoriz);
+            node.setLeft(insert(p, node.getLeft(), !node.isHoriz()));
         }
 
         return node;
@@ -117,21 +91,21 @@ public class KdTree {
     }
 
     /**
-     * @param root
+     * @param node
      * @param p
      * @return
      */
-    private boolean contains(Node root, Point2D p) {
+    private boolean contains(Node node, Point2D p) {
 
-        if (root == null) {
+        if (node == null) {
             return false;
-        } else if (p.equals(root.p)) {
+        } else if (p.equals(node.getP())) {
             return true;
         } else {
-            if ((root.isHoriz && p.x() >= root.p.x() || (!root.isHoriz && p.y() >= root.p.y()))) {
-                return contains(root.right, p);
+            if ((node.isHoriz() && p.x() >= node.getP().x() || (!node.isHoriz() && p.y() >= node.getP().y()))) {
+                return contains(node.getRight(), p);
             } else {
-                return contains(root.left, p);
+                return contains(node.getLeft(), p);
             }
         }
 
@@ -158,8 +132,8 @@ public class KdTree {
             drawSplit(parPar, par, node);
             drawSplit(parPar, par, node);
 
-            draw(par, node, node.left);
-            draw(par, node, node.right);
+            draw(par, node, node.getLeft());
+            draw(par, node, node.getRight());
 
         }
     }
@@ -178,33 +152,33 @@ public class KdTree {
         double startX = 0d;
         double endX = 1d;
 
-        if (node.isHoriz) {
+        if (node.isHoriz()) {
             if (par != null) {
-                if (node.p.y() > par.p.y()) {
-                    startY = par.p.y();
+                if (node.getP().y() > par.getP().y()) {
+                    startY = par.getP().y();
 
                     //endY = parPar.p.y();
                 } else {
                     //startY = parPar.p.y();
-                    endY = par.p.y();
+                    endY = par.getP().y();
                 }
             }
 
-            StdDraw.setPenColor(Color.RED);
-            StdDraw.line(node.p.x(), startY, node.p.x(), endY);
+            //StdDraw.setPenColor(Color.RED);
+            StdDraw.line(node.getP().x(), startY, node.getP().x(), endY);
         } else {
             if (par != null) {
-                if (node.p.x() > par.p.x()) {
-                    startX = par.p.x();
+                if (node.getP().x() > par.getP().x()) {
+                    startX = par.getP().x();
                     //endX = parPar.p.x();
                 } else {
-                    endX = par.p.x();
+                    endX = par.getP().x();
                     //startX = parPar.p.x();
                 }
             }
 
-            StdDraw.setPenColor(Color.GREEN);
-            StdDraw.line(startX, node.p.y(), endX, node.p.y());
+            //StdDraw.setPenColor(Color.GREEN);
+            StdDraw.line(startX, node.getP().y(), endX, node.getP().y());
         }
     }
 
@@ -214,8 +188,8 @@ public class KdTree {
      */
     private void drawPoint(Node node) {
         StdDraw.setPenRadius(.03);
-        StdDraw.setPenColor(Color.BLACK);
-        StdDraw.point(node.p.x(), node.p.y());
+        //StdDraw.setPenColor(Color.BLACK);
+        StdDraw.point(node.getP().x(), node.getP().y());
     }
 
     /**
@@ -240,31 +214,35 @@ public class KdTree {
 
         if (node == null) {
             return agg;
-        } else if (rect.contains(node.p)) {
-            agg.add(node.p);
+        } else if (rect.contains(node.getP())) {
+            agg.add(node.getP());
         }
 
         if (layAllOverRightSide(rect, node)) { // rec lay all over right side
-            range(rect, node.right, agg);
+            range(rect, node.getRight(), agg);
 
         } else if (layAllOverLeftSide(rect, node)) { // rec lay all over left side
-            range(rect, node.left, agg);
+            range(rect, node.getLeft(), agg);
 
         } else { // rec intersect split line
 
-            range(rect, node.right, agg);
-            range(rect, node.left, agg);
+            range(rect, node.getRight(), agg);
+            range(rect, node.getLeft(), agg);
         }
 
         return agg;
     }
 
     private boolean layAllOverLeftSide(RectHV rect, Node node) {
-        return (node.isHoriz && rect.xmax() < node.p.x() && rect.xmin() < node.p.x()) || (!node.isHoriz && rect.ymax() < node.p.y() && rect.ymin() < node.p.y());
+        return (node.isHoriz() && rect.xmax() < node.getP().x() && rect.xmin() < node.getP().x())
+                ||
+                (!node.isHoriz() && rect.ymax() < node.getP().y() && rect.ymin() < node.getP().y());
     }
 
     private boolean layAllOverRightSide(RectHV rect, Node node) {
-        return (node.isHoriz && rect.xmax() >= node.p.x() && rect.xmin() >= node.p.x()) || (!node.isHoriz && rect.ymax() >= node.p.y() && rect.ymin() >= node.p.y());
+        return (node.isHoriz() && rect.xmax() >= node.getP().x() && rect.xmin() >= node.getP().x())
+                ||
+                (!node.isHoriz() && rect.ymax() >= node.getP().y() && rect.ymin() >= node.getP().y());
     }
 
 
@@ -279,7 +257,7 @@ public class KdTree {
             return null;
         }
 
-        return nearest(p, this.root, this.root).p;
+        return nearest(p, this.root, this.root).getP();
     }
 
     /**
@@ -291,29 +269,29 @@ public class KdTree {
      */
     private Node nearest(Point2D pRef, Node node, Node champion) {
         if (node == null) return champion;
-        if (node.p.equals(pRef)) return node;
-        if (pRef.distanceTo(node.p) < pRef.distanceTo(champion.p)) champion = node;
+        if (node.getP().equals(pRef)) return node;
+        if (pRef.distanceTo(node.getP()) < pRef.distanceTo(champion.getP())) champion = node;
 
-        if (node.right != null && ((node.isHoriz && pRef.x() >= node.p.x()) || (!node.isHoriz && pRef.y() >= node.p.y()))) {
-            if (pRef.distanceTo(node.right.p) < pRef.distanceTo(champion.p)) {
-                champion = node.right;
+        if (node.getRight() != null && ((node.isHoriz() && pRef.x() >= node.getP().x()) || (!node.isHoriz() && pRef.y() >= node.getP().y()))) {
+            if (pRef.distanceTo(node.getRight().getP()) < pRef.distanceTo(champion.getP())) {
+                champion = node.getRight();
             }
 
-            champion = nearest(pRef, node.right, champion);
+            champion = nearest(pRef, node.getRight(), champion);
 
-            if (node.left != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.p)) {
-                champion = nearest(pRef, node.left, champion);
+            if (node.getLeft() != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.getP())) {
+                champion = nearest(pRef, node.getLeft(), champion);
             }
 
         } else {
-            if (node.left != null && pRef.distanceTo(node.left.p) < pRef.distanceTo(champion.p)) {
-                champion = node.left;
+            if (node.getLeft() != null && pRef.distanceTo(node.getLeft().getP()) < pRef.distanceTo(champion.getP())) {
+                champion = node.getLeft();
             }
 
-            champion = nearest(pRef, node.left, champion);
+            champion = nearest(pRef, node.getLeft(), champion);
 
-            if (node.right != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.p)) {
-                champion = nearest(pRef, node.right, champion);
+            if (node.getRight() != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.getP())) {
+                champion = nearest(pRef, node.getRight(), champion);
             }
         }
 
@@ -331,10 +309,10 @@ public class KdTree {
         double lowestPtX = pRef.x();
         double lowestPtY = pRef.y();
 
-        if (node.isHoriz) {
-            lowestPtX = node.p.x();
+        if (node.isHoriz()) {
+            lowestPtX = node.getP().x();
         } else {
-            lowestPtY = node.p.y();
+            lowestPtY = node.getP().y();
         }
 
         return new Point2D(lowestPtX, lowestPtY).distanceTo(pRef);
@@ -344,5 +322,58 @@ public class KdTree {
      * unit testing of the methods (optional)
      */
     public static void main(String[] args) {
+    }
+
+    /**
+     * Basic node representantion
+     */
+    private static class Node {
+        private Point2D p;
+        private boolean isHoriz;
+        private Node left;
+        private Node right;
+
+        public Node(Point2D p, boolean isHoriz) {
+            this(p, isHoriz, null, null);
+        }
+
+        public Node(Point2D p, boolean isHoriz, Node left, Node right) {
+            this.setIsHoriz(isHoriz);
+            this.setP(p);
+            this.setLeft(left);
+            this.setRight(right);
+        }
+
+        public Point2D getP() {
+            return p;
+        }
+
+        public void setP(Point2D p) {
+            this.p = p;
+        }
+
+        public boolean isHoriz() {
+            return isHoriz;
+        }
+
+        public void setIsHoriz(boolean isHoriz) {
+            this.isHoriz = isHoriz;
+        }
+
+        public Node getLeft() {
+            return left;
+        }
+
+        public void setLeft(Node left) {
+            this.left = left;
+        }
+
+        public Node getRight() {
+            return right;
+        }
+
+        public void setRight(Node right) {
+            this.right = right;
+        }
     }
 }

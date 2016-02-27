@@ -89,7 +89,6 @@ public class PointSET {
             throw new java.lang.NullPointerException("p is null");
         }
 
-
         Point2D nearest = null;
         double distance = Double.POSITIVE_INFINITY;
 
@@ -100,7 +99,6 @@ public class PointSET {
                 nearest = pFromSet;
             }
         }
-
 
         return nearest;
     }
