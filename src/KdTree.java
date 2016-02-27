@@ -272,7 +272,11 @@ public class KdTree {
         if (node.getP().equals(pRef)) return node;
         if (pRef.distanceTo(node.getP()) < pRef.distanceTo(champion.getP())) champion = node;
 
-        if (node.getRight() != null && ((node.isHoriz() && pRef.x() >= node.getP().x()) || (!node.isHoriz() && pRef.y() >= node.getP().y()))) {
+        if (node.getRight() != null &&
+                ((node.isHoriz() && pRef.x() >= node.getP().x())
+                        ||
+                        (!node.isHoriz() && pRef.y() >= node.getP().y()))) {
+
             if (pRef.distanceTo(node.getRight().getP()) < pRef.distanceTo(champion.getP())) {
                 champion = node.getRight();
             }
@@ -284,13 +288,15 @@ public class KdTree {
             }
 
         } else {
-            if (node.getLeft() != null && pRef.distanceTo(node.getLeft().getP()) < pRef.distanceTo(champion.getP())) {
+            if (node.getLeft() != null &&
+                    pRef.distanceTo(node.getLeft().getP()) < pRef.distanceTo(champion.getP())) {
                 champion = node.getLeft();
             }
 
             champion = nearest(pRef, node.getLeft(), champion);
 
-            if (node.getRight() != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.getP())) {
+            if (node.getRight() != null &&
+                    lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.getP())) {
                 champion = nearest(pRef, node.getRight(), champion);
             }
         }
