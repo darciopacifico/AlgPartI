@@ -65,15 +65,16 @@ public class KdTree {
             return node;
         }
 
-        if ((node.isHoriz() && p.x() >= node.getP().x()) || (!node.isHoriz() && p.y() >= node.getP().y())) {
+        if (isOnNotNullRight(p, node)) {
             node.setRight(insert(p, node.getRight(), !node.isHoriz()));
 
-        } else /*if ((node.isHoriz && p.x() < node.p.x()) || (!node.isHoriz && p.y() < node.p.y()))*/ {
+        } else {
             node.setLeft(insert(p, node.getLeft(), !node.isHoriz()));
         }
 
         return node;
     }
+
 
     private RectHV takeSide(Point2D p, int right) {
         return null;
@@ -96,20 +97,17 @@ public class KdTree {
      * @return
      */
     private boolean contains(Node node, Point2D p) {
-
         if (node == null) {
             return false;
         } else if (p.equals(node.getP())) {
             return true;
         } else {
-            if ((node.isHoriz() && p.x() >= node.getP().x() || (!node.isHoriz() && p.y() >= node.getP().y()))) {
+            if (isOnRight(p, node)) {
                 return contains(node.getRight(), p);
             } else {
                 return contains(node.getLeft(), p);
             }
         }
-
-
     }
 
     /**
@@ -134,7 +132,6 @@ public class KdTree {
 
             draw(par, node, node.getLeft());
             draw(par, node, node.getRight());
-
         }
     }
 
@@ -148,7 +145,6 @@ public class KdTree {
 
         double startY = 0d;
         double endY = 1d;
-
         double startX = 0d;
         double endX = 1d;
 
@@ -156,28 +152,21 @@ public class KdTree {
             if (par != null) {
                 if (node.getP().y() > par.getP().y()) {
                     startY = par.getP().y();
-
-                    //endY = parPar.p.y();
                 } else {
-                    //startY = parPar.p.y();
                     endY = par.getP().y();
                 }
             }
 
-            //StdDraw.setPenColor(Color.RED);
             StdDraw.line(node.getP().x(), startY, node.getP().x(), endY);
         } else {
             if (par != null) {
                 if (node.getP().x() > par.getP().x()) {
                     startX = par.getP().x();
-                    //endX = parPar.p.x();
                 } else {
                     endX = par.getP().x();
-                    //startX = parPar.p.x();
                 }
             }
 
-            //StdDraw.setPenColor(Color.GREEN);
             StdDraw.line(startX, node.getP().y(), endX, node.getP().y());
         }
     }
@@ -188,7 +177,6 @@ public class KdTree {
      */
     private void drawPoint(Node node) {
         StdDraw.setPenRadius(.03);
-        //StdDraw.setPenColor(Color.BLACK);
         StdDraw.point(node.getP().x(), node.getP().y());
     }
 
@@ -225,13 +213,20 @@ public class KdTree {
             range(rect, node.getLeft(), agg);
 
         } else { // rec intersect split line
-
             range(rect, node.getRight(), agg);
             range(rect, node.getLeft(), agg);
         }
-
         return agg;
     }
+
+    private boolean isOnRight(Point2D p, Node node) {
+        return (node.isHoriz() && p.x() >= node.getP().x()) || (!node.isHoriz() && p.y() >= node.getP().y());
+    }
+
+    private boolean isOnNotNullRight(Point2D p, Node node) {
+        return node.getRight() != null && isOnRight(p, node);
+    }
+
 
     private boolean layAllOverLeftSide(RectHV rect, Node node) {
         return (node.isHoriz() && rect.xmax() < node.getP().x() && rect.xmin() < node.getP().x())
@@ -250,12 +245,11 @@ public class KdTree {
      * A nearest neighbor in the set to point p; null if the set is empty
      */
     public Point2D nearest(Point2D p) {
-        if (p == null) {
+        if (p == null)
             throw new java.lang.NullPointerException("p is null");
-        }
-        if (this.isEmpty()) {
+
+        if (this.isEmpty())
             return null;
-        }
 
         return nearest(p, this.root, this.root).getP();
     }
@@ -267,41 +261,36 @@ public class KdTree {
      * @param node
      * @return
      */
-    private Node nearest(Point2D pRef, Node node, Node champion) {
-        if (node == null) return champion;
+    private Node nearest(Point2D pRef, Node node, Node champ) {
+        if (node == null) return champ;
         if (node.getP().equals(pRef)) return node;
-        if (pRef.distanceTo(node.getP()) < pRef.distanceTo(champion.getP())) champion = node;
+        if (pRef.distanceTo(node.getP()) < pRef.distanceTo(champ.getP())) champ = node;
 
-        if (node.getRight() != null &&
-                ((node.isHoriz() && pRef.x() >= node.getP().x())
-                        ||
-                        (!node.isHoriz() && pRef.y() >= node.getP().y()))) {
+        if (isOnNotNullRight(pRef, node)) { // point lay on not null right side
 
-            if (pRef.distanceTo(node.getRight().getP()) < pRef.distanceTo(champion.getP())) {
-                champion = node.getRight();
+            if (pRef.distanceTo(node.getRight().getP()) < pRef.distanceTo(champ.getP())) {
+                champ = node.getRight(); // update champ
             }
 
-            champion = nearest(pRef, node.getRight(), champion);
+            champ = nearest(pRef, node.getRight(), champ);
 
-            if (node.getLeft() != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.getP())) {
-                champion = nearest(pRef, node.getLeft(), champion);
+            if (node.getLeft() != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champ.getP())) {
+                champ = nearest(pRef, node.getLeft(), champ);
             }
 
         } else {
-            if (node.getLeft() != null &&
-                    pRef.distanceTo(node.getLeft().getP()) < pRef.distanceTo(champion.getP())) {
-                champion = node.getLeft();
+            if (node.getLeft() != null && pRef.distanceTo(node.getLeft().getP()) < pRef.distanceTo(champ.getP())) {
+                champ = node.getLeft();
             }
 
-            champion = nearest(pRef, node.getLeft(), champion);
+            champ = nearest(pRef, node.getLeft(), champ);
 
-            if (node.getRight() != null &&
-                    lowerPossibleDist(pRef, node) < pRef.distanceTo(champion.getP())) {
-                champion = nearest(pRef, node.getRight(), champion);
+            if (node.getRight() != null && lowerPossibleDist(pRef, node) < pRef.distanceTo(champ.getP())) {
+                champ = nearest(pRef, node.getRight(), champ);
             }
         }
 
-        return champion;
+        return champ;
     }
 
     /**
@@ -315,11 +304,10 @@ public class KdTree {
         double lowestPtX = pRef.x();
         double lowestPtY = pRef.y();
 
-        if (node.isHoriz()) {
+        if (node.isHoriz())
             lowestPtX = node.getP().x();
-        } else {
+        else
             lowestPtY = node.getP().y();
-        }
 
         return new Point2D(lowestPtX, lowestPtY).distanceTo(pRef);
     }

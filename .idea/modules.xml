@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AlgCourse.iml" filepath="$PROJECT_DIR$/AlgCourse.iml" />
       <module fileurl="file://$PROJECT_DIR$/Point/Point.iml" filepath="$PROJECT_DIR$/Point/Point.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WordNet/WordNet.iml" filepath="$PROJECT_DIR$/WordNet/WordNet.iml" />
     </modules>
   </component>
 </project>
