@@ -1,7 +1,4 @@
-import edu.princeton.cs.algs4.Digraph;
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.*;
 
 import java.util.*;
 
@@ -23,7 +20,7 @@ public class SAP {
      *
      * @param <T>
      */
-    class Tuple2<T> {
+    private class Tuple2<T> {
         public T _1, _2;
 
         public Tuple2(T _1, T _2) {
@@ -39,13 +36,36 @@ public class SAP {
     public int length(int v, int w) {
         Tuple2<List<Integer>> twoPathsResult = getLCAPaths(v, w);
 
+        int length = getLength(twoPathsResult);
+
+        return length;
+
+    }
+
+    private Integer getLength(Tuple2<List<Integer>> twoPathsResult) {
         if (twoPathsResult != null) {
-            return twoPathsResult._1.size() + twoPathsResult._2.size() - 2;
-        } else {
-            return -1;
+
+            int size1 = twoPathsResult._1.size();
+            int size2 = twoPathsResult._2.size();
+
+
+            int desconto = 0;
+
+            if (size1 == 1 && size2 == 1) {
+                // mesmo ponto.. impossivel, mas...
+                return 0;
+
+            } else if (size1 == 1 || size2 == 1) {
+                // um é filho do outro.. entao um deve ser desprezado. pegar maior
+                return Math.max(size1, size2) - 1;
+            } else {
+                //dois branches diferentes
+                return size1 + size2 - 2;
+            }
+
 
         }
-
+        return -1;
     }
 
     /**
@@ -56,13 +76,62 @@ public class SAP {
      * @return
      */
     private Tuple2<List<Integer>> getLCAPaths(int v, int w) {
-        Map<Integer, List<Integer>> pathsToV = pathsToHighest(v);
-        Map<Integer, List<Integer>> pathsToW = pathsToHighest(w);
+        Set<List<Integer>> setPathsToV = pathsToRoot(v,w);
+        Set<List<Integer>> setPathsToW = pathsToRoot(w,v);
 
-        Set<Integer> commonParents = getCommonParents(pathsToV, pathsToW);
+        //Set<Integer> commonParents = getCommonParents(pathsToV, pathsToW);
+        Integer champLen = Integer.MAX_VALUE; // as default, no common parent
+        Tuple2<List<Integer>> champPat = null;
+
+        for (List<Integer> pathV : setPathsToV) {
+            for (List<Integer> pathW : setPathsToW) {
+                if (isSameRoot(pathV, pathW)) {
+
+                    List<Integer> copyPathV = copyList(pathV);
+                    List<Integer> copyPathW = copyList(pathW);
+
+                    Tuple2<List<Integer>> twoPaths = removeCommonStart(copyPathV, copyPathW);
+
+                    Integer dist = getLength(twoPaths);
+
+                    if (dist < champLen) {
+                        champLen = dist; // new champion
+                        champPat = twoPaths;
+                    }
+                }
+            }
+        }
+
+        return champPat;
+    }
+
+    /*
+        if (champPat != null) {
+            assert (champPat._1 != null && champPat._2 != null && champPat._1.size() > 0 && champPat._2.size() > 0);
+        }
+*/
+
+
+    private boolean isSameRoot(List<Integer> pathToV, List<Integer> pathToW) {
+        final Integer rootV = pathToV.get(0);
+        final Integer rootW = pathToW.get(0);
+
+        return rootV.intValue() == rootW.intValue();
+    }
+/*
+
+
+    private Tuple2<List<Integer>> getLCAPaths(int v, int w) {
+        Set<List<Integer>> pathsToV = pathsToHighest(v);
+        Set<List<Integer>> pathsToW = pathsToHighest(w);
+
+        //Set<Integer> commonParents = getCommonParents(pathsToV, pathsToW);
 
         Integer champLen = Integer.MAX_VALUE; // as default, no common parent
         Tuple2<List<Integer>> champPat = null;
+
+
+
 
         for (Integer parent : commonParents) {
 
@@ -86,6 +155,7 @@ public class SAP {
 
         return champPat;
     }
+*/
 
     /**
      * Recursively remove the largest parent in common, letting only the LCA
@@ -118,13 +188,14 @@ public class SAP {
      * @param pathsToW
      * @return
      */
-    private Set<Integer> getCommonParents(Map<Integer, List<Integer>> pathsToV, Map<Integer, List<Integer>> pathsToW) {
-        Set<Integer> pathKeysV = pathsToV.keySet();
-        Set<Integer> pathKeysW = pathsToW.keySet();
+    private Set<Integer> getCommonParents(Set<List<Integer>> pathsToV, Set<List<Integer>> pathsToW) {
 
-        pathKeysV.retainAll(pathKeysW);
 
-        return pathKeysV;
+        HashSet<Integer> set = new HashSet<Integer>();
+
+        set.add(pathsToV.iterator().next().get(0));
+
+        return set;
     }
 
 
@@ -132,8 +203,9 @@ public class SAP {
      * @param v
      * @return
      */
-    protected Map<Integer, List<Integer>> pathsToHighest(int v) {
-        return this.pathsToHighest(v, new HashSet<Integer>(10), new LinkedList<Integer>(), new HashMap<Integer, List<Integer>>());
+    private Set<List<Integer>> pathsToRoot(int v, int w) {
+        Set<List<Integer>> initialSet = new HashSet<List<Integer>>();
+        return this.pathsToRoot(v, w,new HashSet<Integer>(10), new LinkedList<Integer>(), initialSet);
     }
 
 
@@ -144,27 +216,41 @@ public class SAP {
      * @param pathsToEnd
      * @return
      */
-    private Map<Integer, List<Integer>> pathsToHighest(int v, Set<Integer> visiteds, List<Integer> pathToHigh, Map<Integer, List<Integer>> pathsToEnd) {
+    private Set<List<Integer>> pathsToRoot(int v, int w, Set<Integer> visiteds, List<Integer> pathToHigh, Set<List<Integer>> pathsToEnd) {
         pathToHigh.add(v);
         visiteds.add(v);
+
 
         Iterable<Integer> adjList = digraph.adj(v);
 
         if (digraph.outdegree(v) > 0) {
             for (Integer adjV : adjList) {
+
                 if (!visiteds.contains(adjV)) {
+
                     List<Integer> newPathToHigh = copyList(pathToHigh);
-                    //pathToHigh = null; // TODO: think about memory optimization
-                    pathsToHighest(adjV, visiteds, newPathToHigh, pathsToEnd);
+                    Set<Integer> copyVisiteds = copyVisiteds(visiteds);
+
+                    if (!(adjV == w)) {
+                        //pathToHigh = null; // TODO: think about memory optimization
+                        pathsToRoot(adjV, w, copyVisiteds, newPathToHigh, pathsToEnd);
+                    }
+
                 }
             }
-        } else {
-            //no more from here
-            Collections.reverse(pathToHigh);
-            pathsToEnd.put(pathToHigh.get(0), pathToHigh);
         }
+        //no more from here
+        Collections.reverse(pathToHigh);
+
+        pathsToEnd.add(pathToHigh);
+
 
         return pathsToEnd;
+    }
+
+
+    private HashSet<Integer> copyVisiteds(Set<Integer> visiteds) {
+        return new HashSet<Integer>(visiteds);
     }
 
     /**
@@ -206,6 +292,18 @@ public class SAP {
     public static void main(String[] args) {
         In in = new In(args[0]);
         Digraph digraph = new Digraph(in);
+
+        int v = 1;
+        int w = 0;
+
+        BreadthFirstDirectedPaths bfds = new BreadthFirstDirectedPaths(digraph, v);
+        Iterable<Integer> path = bfds.pathTo(w);
+
+        for (Integer p:path){
+            System.out.println(p);
+        }
+
+        /*
         SAP sap = new SAP(digraph);
 
         while (!StdIn.isEmpty()) {
@@ -215,6 +313,7 @@ public class SAP {
             int ancestor = sap.ancestor(v, w);
             StdOut.printf("length = %d, ancestor = %d\n", length, ancestor);
         }
+        */
         //sap.pathToHighest(10);
 
     }
