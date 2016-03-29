@@ -8,10 +8,34 @@ import java.util.*;
  */
 public class SAP {
     private Digraph digraph;
+    private Map<Integer, Set<Integer>> cacheAncestors = new HashMap<Integer, Set<Integer>>();
 
     // constructor takes a digraph (not necessarily a DAG)
     public SAP(Digraph digraph) {
-        this.digraph = digraph;
+
+        if (digraph == null)
+            throw new java.lang.NullPointerException("digraph is null");
+
+        this.digraph = copyDigraph(digraph);
+    }
+
+    /**
+     * Make a defensive copy of digraph
+     *
+     * @param digraph
+     * @return
+     */
+    private Digraph copyDigraph(Digraph digraph) {
+        int vertices = digraph.V();
+        Digraph digraphCopy = new Digraph(vertices);
+
+        for (int v = 0; v < vertices; v++) {
+            for (int w : digraph.adj(v)) {
+                digraphCopy.addEdge(v, w);
+            }
+        }
+
+        return digraphCopy;
     }
 
 
@@ -31,290 +55,207 @@ public class SAP {
 
 
     /**
-     * length of shortest ancestral path between v and w; -1 if no such path
+     * Get tuple LCA + Length
+     *
+     * @param vs
+     * @param ws
+     * @return
      */
-    public int length(int v, int w) {
-        Tuple2<List<Integer>> twoPathsResult = getLCAPaths(v, w);
+    private Tuple2<Long> getLCA_Legth(Iterable<Integer> vs, Iterable<Integer> ws) {
 
-        int length = getLength(twoPathsResult);
+        if (ws == null || vs == null)
+            throw new NullPointerException("ws or vs = null");
 
-        return length;
+        for (Integer v : vs)
+            this.digraph.indegree(v);
 
-    }
-
-    private Integer getLength(Tuple2<List<Integer>> twoPathsResult) {
-        if (twoPathsResult != null) {
-
-            int size1 = twoPathsResult._1.size();
-            int size2 = twoPathsResult._2.size();
+        for (Integer v : vs)
+            this.digraph.indegree(v);
 
 
-            int desconto = 0;
+        Tuple2<Long> tup = new Tuple2<Long>(-1l, -1l); // by defaul, none was found
 
-            if (size1 == 1 && size2 == 1) {
-                // mesmo ponto.. impossivel, mas...
-                return 0;
 
-            } else if (size1 == 1 || size2 == 1) {
-                // um é filho do outro.. entao um deve ser desprezado. pegar maior
-                return Math.max(size1, size2) - 1;
-            } else {
-                //dois branches diferentes
-                return size1 + size2 - 2;
+        BreadthFirstDirectedPaths bv = new BreadthFirstDirectedPaths(digraph, vs);
+        BreadthFirstDirectedPaths bw = new BreadthFirstDirectedPaths(digraph, ws);
+
+        Set<Integer> commonAncestors = allCommonAncestors(vs, ws);
+        if (!commonAncestors.isEmpty()) {
+
+            for (Integer p : commonAncestors) {
+
+                Long dv = new Long(bv.distTo(p));
+                Long dw = new Long(bw.distTo(p));
+
+                long distTotal = dv + dw;
+
+                if (tup._2 == -1 || distTotal < tup._2) {
+                    tup._1 = p.longValue();
+                    tup._2 = distTotal;
+                }
             }
-
-
         }
-        return -1;
+
+        return tup;
     }
 
     /**
-     * Calculate LCA with lowest distance
+     * join all common ancestors
+     *
+     * @param vs
+     * @param ws
+     * @return
+     */
+    private Set<Integer> allCommonAncestors(Iterable<Integer> vs, Iterable<Integer> ws) {
+        Set<Integer> reachsV = allAncestors(vs);
+        Set<Integer> reachsW = allAncestors(ws);
+
+        reachsV.retainAll(reachsW);
+        return reachsV;
+    }
+
+    /**
+     * join all common ancestors
      *
      * @param v
      * @param w
      * @return
      */
-    private Tuple2<List<Integer>> getLCAPaths(int v, int w) {
-        Set<List<Integer>> setPathsToV = pathsToRoot(v,w);
-        Set<List<Integer>> setPathsToW = pathsToRoot(w,v);
+    private Set<Integer> allCommonAncestors(Integer v, Integer w) {
+        Set<Integer> reachsV = allAncestors(Collections.singleton(v));
+        Set<Integer> reachsW = allAncestors(Collections.singleton(w));
 
-        //Set<Integer> commonParents = getCommonParents(pathsToV, pathsToW);
-        Integer champLen = Integer.MAX_VALUE; // as default, no common parent
-        Tuple2<List<Integer>> champPat = null;
-
-        for (List<Integer> pathV : setPathsToV) {
-            for (List<Integer> pathW : setPathsToW) {
-                if (isSameRoot(pathV, pathW)) {
-
-                    List<Integer> copyPathV = copyList(pathV);
-                    List<Integer> copyPathW = copyList(pathW);
-
-                    Tuple2<List<Integer>> twoPaths = removeCommonStart(copyPathV, copyPathW);
-
-                    Integer dist = getLength(twoPaths);
-
-                    if (dist < champLen) {
-                        champLen = dist; // new champion
-                        champPat = twoPaths;
-                    }
-                }
-            }
-        }
-
-        return champPat;
+        reachsV.retainAll(reachsW);
+        return reachsV;
     }
 
-    /*
-        if (champPat != null) {
-            assert (champPat._1 != null && champPat._2 != null && champPat._1.size() > 0 && champPat._2.size() > 0);
-        }
-*/
-
-
-    private boolean isSameRoot(List<Integer> pathToV, List<Integer> pathToW) {
-        final Integer rootV = pathToV.get(0);
-        final Integer rootW = pathToW.get(0);
-
-        return rootV.intValue() == rootW.intValue();
-    }
-/*
-
-
-    private Tuple2<List<Integer>> getLCAPaths(int v, int w) {
-        Set<List<Integer>> pathsToV = pathsToHighest(v);
-        Set<List<Integer>> pathsToW = pathsToHighest(w);
-
-        //Set<Integer> commonParents = getCommonParents(pathsToV, pathsToW);
-
-        Integer champLen = Integer.MAX_VALUE; // as default, no common parent
-        Tuple2<List<Integer>> champPat = null;
-
-
-
-
-        for (Integer parent : commonParents) {
-
-            List<Integer> pathToV = pathsToV.get(parent);
-            List<Integer> pathToW = pathsToW.get(parent);
-
-            Tuple2<List<Integer>> twoPaths = removeCommonStart(pathToV, pathToW);
-
-            Integer dist = twoPaths._1.size() + twoPaths._2.size() - 2;
-
-            if (dist < champLen) {
-                champLen = dist; // new champion
-                champPat = twoPaths;
-            }
-
-        }
-
-        if (champPat != null) {
-            assert (champPat._1 != null && champPat._2 != null && champPat._1.size() > 0 && champPat._2.size() > 0);
-        }
-
-        return champPat;
-    }
-*/
 
     /**
-     * Recursively remove the largest parent in common, letting only the LCA
+     * Take all ancestors
      *
-     * @param pathsToV
-     * @param pathsToW
-     * @return
-     */
-    private Tuple2<List<Integer>> removeCommonStart(List<Integer> pathsToV, List<Integer> pathsToW) {
-        assert (pathsToV.size() > 0 && pathsToW.size() > 0);
-
-        //are the first and second element equals? if yes, remove the first one
-        if (pathsToV.size() > 1 && pathsToW.size() > 1 &&
-                pathsToV.get(0).equals(pathsToW.get(0)) &&
-                pathsToV.get(1).equals(pathsToW.get(1))) {
-
-            pathsToV.remove(0);
-            pathsToW.remove(0);
-
-            removeCommonStart(pathsToV, pathsToW);
-        }
-
-        return new Tuple2<List<Integer>>(pathsToV, pathsToW);
-    }
-
-    /**
-     * From all paths from vertices to border, consider only those with same largest parent
-     *
-     * @param pathsToV
-     * @param pathsToW
-     * @return
-     */
-    private Set<Integer> getCommonParents(Set<List<Integer>> pathsToV, Set<List<Integer>> pathsToW) {
-
-
-        HashSet<Integer> set = new HashSet<Integer>();
-
-        set.add(pathsToV.iterator().next().get(0));
-
-        return set;
-    }
-
-
-    /**
-     * @param v
-     * @return
-     */
-    private Set<List<Integer>> pathsToRoot(int v, int w) {
-        Set<List<Integer>> initialSet = new HashSet<List<Integer>>();
-        return this.pathsToRoot(v, w,new HashSet<Integer>(10), new LinkedList<Integer>(), initialSet);
-    }
-
-
-    /**
      * @param v
      * @param visiteds
-     * @param pathToHigh
-     * @param pathsToEnd
      * @return
      */
-    private Set<List<Integer>> pathsToRoot(int v, int w, Set<Integer> visiteds, List<Integer> pathToHigh, Set<List<Integer>> pathsToEnd) {
-        pathToHigh.add(v);
+    private Set<Integer> allAncestors(Integer v, Set<Integer> visiteds) {
+
         visiteds.add(v);
+        Iterable<Integer> adj = digraph.adj(v);
 
-
-        Iterable<Integer> adjList = digraph.adj(v);
-
-        if (digraph.outdegree(v) > 0) {
-            for (Integer adjV : adjList) {
-
-                if (!visiteds.contains(adjV)) {
-
-                    List<Integer> newPathToHigh = copyList(pathToHigh);
-                    Set<Integer> copyVisiteds = copyVisiteds(visiteds);
-
-                    if (!(adjV == w)) {
-                        //pathToHigh = null; // TODO: think about memory optimization
-                        pathsToRoot(adjV, w, copyVisiteds, newPathToHigh, pathsToEnd);
-                    }
-
-                }
+        for (Integer vAdj : adj) {
+            if (!visiteds.contains(vAdj)) {
+                allAncestors(vAdj, visiteds);
             }
         }
-        //no more from here
-        Collections.reverse(pathToHigh);
 
-        pathsToEnd.add(pathToHigh);
+        return visiteds;
 
-
-        return pathsToEnd;
     }
 
 
-    private HashSet<Integer> copyVisiteds(Set<Integer> visiteds) {
-        return new HashSet<Integer>(visiteds);
+    /**
+     * take all ancestors
+     *
+     * @param v
+     * @return
+     */
+    private Set<Integer> allAncestors(Integer v) {
+
+        if (this.cacheAncestors.containsKey(v)) {
+            return this.cacheAncestors.get(v);
+
+        } else {
+            final Set<Integer> ancestors = allAncestors(v, new HashSet<Integer>());
+            this.cacheAncestors.put(v, ancestors);
+
+            return ancestors;
+        }
+
     }
 
     /**
-     * Simple copy of a list
+     * take all ancestors
      *
-     * @param pathToHigh
+     * @param vs
      * @return
      */
-    private List<Integer> copyList(List<Integer> pathToHigh) {
-        return new ArrayList<Integer>(pathToHigh);
-    }
+    private Set<Integer> allAncestors(Iterable<Integer> vs) {
+        Set<Integer> visiteds = new HashSet<Integer>();
+        Set<Integer> reachables = new HashSet<Integer>();
 
-
-    // a common ancestor of v and w that participates in a shortest ancestral path; -1 if no such path
-    public int ancestor(int v, int w) {
-
-        Tuple2<List<Integer>> twoPathsResult = getLCAPaths(v, w);
-
-        if (twoPathsResult != null) {
-            return twoPathsResult._1.get(0);
-        } else {
-            return -1;
-
+        for (Integer v : vs) {
+            reachables.addAll(allAncestors(v, visiteds));
         }
 
+        return reachables;
     }
 
-    // length of shortest ancestral path between any vertex in v and any vertex in w; -1 if no such path
-    public int length(Iterable<Integer> v, Iterable<Integer> w) {
-        return 0;
+
+    /**
+     * Length of shortest ancestral path between v and w; -1 if no such path
+     */
+    public int length(int v, int w) {
+        return length(Collections.singletonList(v), Collections.singletonList(w));
     }
 
-    // a common ancestor that participates in shortest ancestral path; -1 if no such path
+    /**
+     * A common ancestor of v and w that participates in a shortest ancestral path; -1 if no such path
+     */
+    public int ancestor(int v, int w) {
+        return ancestor(Collections.singletonList(v), Collections.singletonList(w));
+    }
+
+    /**
+     * Length of shortest ancestral path between any vertex in v and any vertex in w; -1 if no such path
+     */
+    public int length(Iterable<Integer> vs, Iterable<Integer> ws) {
+        return getLCA_Legth(vs, ws)._2.intValue();
+    }
+
+    /**
+     * A common ancestor that participates in shortest ancestral path; -1 if no such path
+     *
+     * @param v
+     * @param w
+     * @return
+     */
     public int ancestor(Iterable<Integer> v, Iterable<Integer> w) {
-        return 0;
+        return getLCA_Legth(v, w)._1.intValue();
     }
 
-    // do unit testing of this class
+
+    /**
+     * do unit testing of this class
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         In in = new In(args[0]);
         Digraph digraph = new Digraph(in);
-
-        int v = 1;
-        int w = 0;
-
-        BreadthFirstDirectedPaths bfds = new BreadthFirstDirectedPaths(digraph, v);
-        Iterable<Integer> path = bfds.pathTo(w);
-
-        for (Integer p:path){
-            System.out.println(p);
-        }
-
-        /*
         SAP sap = new SAP(digraph);
+
+
+        List<Integer> vs = new ArrayList<Integer>();
+        List<Integer> ws = new ArrayList<Integer>();
+
+        vs.add(77401);
+        //vs.add();
+
+        ws.add(33587);
+        ws.add(40679);
+
+        Integer l = sap.length(vs, ws);
+
+        System.out.print("  vs:" + vs + " ws:" + ws + " length = " + l);
 
         while (!StdIn.isEmpty()) {
             int v = StdIn.readInt();
             int w = StdIn.readInt();
             int length = sap.length(v, w);
             int ancestor = sap.ancestor(v, w);
+
             StdOut.printf("length = %d, ancestor = %d\n", length, ancestor);
         }
-        */
-        //sap.pathToHighest(10);
 
     }
 
