@@ -1,7 +1,4 @@
-import edu.princeton.cs.algs4.Digraph;
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.*;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -48,8 +45,43 @@ public class WordNet {
             throw new NullPointerException("synsets and hypernyms must not be null!");
         }
 
-        fillMapSynset(synsets);
+        final Integer lineCount = getLineCount(synsets);
+        this.digraph = new Digraph(lineCount);
+
         fillHypernyms(hypernyms);
+        fillMapSynset(synsets);
+        validateDAGDigraph();
+    }
+
+    /**
+     * just check for a non DAG digraph
+     */
+    private void validateDAGDigraph() {
+        if (!new Topological(this.digraph).hasOrder()) {
+            throw new IllegalArgumentException("Synset must not be a DAG Digraph!");
+        }
+
+        if (!new TopologicalX(this.digraph).hasOrder()) {
+            throw new IllegalArgumentException("Synset must not be a DAG Digraph!");
+        }
+
+        if (new DirectedCycle(this.digraph).hasCycle()) {
+            throw new IllegalArgumentException("Synset must not be a DAG Digraph!");
+        }
+
+
+        int countZeroOutDegrees = 0;
+        for (int v = 0; v < this.digraph.V(); v++) {
+            int outDegree = this.digraph.outdegree(v);
+            if (outDegree == 0) {
+                countZeroOutDegrees++;
+                if (countZeroOutDegrees > 1) {
+                    throw new IllegalArgumentException("Digraph contains more than one root or two paths!");
+                }
+            }
+        }
+
+
     }
 
     /**
@@ -58,7 +90,6 @@ public class WordNet {
      * @param hypernyms
      */
     private void fillHypernyms(String hypernyms) {
-        this.digraph = new Digraph(getLineCount(hypernyms));
 
         In in = new In(hypernyms);
         while (in.hasNextLine()) {
@@ -69,13 +100,10 @@ public class WordNet {
             if (cols.length < 2) {
 //                throw new IllegalArgumentException("hypernyms file doesn't fit to expected layout (id, ids...) line=" + line);
             }
-
             Integer idOrig = new Integer(cols[0]);
 
             for (int i = 1; i < cols.length; i++) {
-
                 this.digraph.addEdge(idOrig, new Integer(cols[i]));
-
             }
         }
 
@@ -95,7 +123,7 @@ public class WordNet {
         } catch (IOException e) {
             throw new IllegalArgumentException("File doesn't found!", e);
         }
-        return lineCount.intValue() + 1;
+        return lineCount.intValue();
     }
 
     /**
@@ -104,6 +132,7 @@ public class WordNet {
      * @param synsets
      */
     private void fillMapSynset(String synsets) {
+
         In in = new In(synsets);
         while (in.hasNextLine()) {
             String line = in.readLine();
@@ -139,21 +168,31 @@ public class WordNet {
 
     // is the word a WordNet noun?
     public boolean isNoun(String word) {
+        if (word == null)
+            throw new NullPointerException("word == null");
+
         return this.mapByNounSynset.containsKey(word);
     }
 
     // distance between nounA and nounB (defined below)
     public int distance(String nounA, String nounB) {
+        if (nounA == null || nounB == null) {
+            throw new NullPointerException("nounA or nounB is null");
+        }
+
+        /*if (!this.isNoun(nounA) || this.isNoun(nounB)) {
+            throw new IllegalArgumentException("nounA or nounB is not a known noun!");
+        }*/
+
         Set<Synset> synsetA = this.mapByNounSynset.get(nounA);
         Set<Synset> synsetB = this.mapByNounSynset.get(nounB);
 
         if (synsetA == null || synsetB == null) {
-            return -1;
+            throw new IllegalArgumentException("nounA or nounB is not a known noun!");
         }
 
         Iterable<Integer> as = getIds(synsetA);
         Iterable<Integer> bs = getIds(synsetB);
-
 
         return this.sap.length(as, bs);
     }
@@ -176,11 +215,15 @@ public class WordNet {
     // in a shortest ancestral path (defined below)
     public String sap(String nounA, String nounB) {
 
+        if (nounA == null || nounB == null) {
+            throw new java.lang.NullPointerException("nounA or nounB == null");
+        }
+
         Set<Synset> synsetA = this.mapByNounSynset.get(nounA);
         Set<Synset> synsetB = this.mapByNounSynset.get(nounB);
 
         if (synsetA == null || synsetB == null) {
-            return null;
+            throw new IllegalArgumentException("nounA or nounB is not a known noun!");
         }
 
 
@@ -201,12 +244,11 @@ public class WordNet {
         String hypernyms;
 
         if (args.length < 2) {
+            synsetFile = "/Users/dpacif1/scala/PercolatoinAssignment/WordNet/src/synsets15.txt";
+            hypernyms = "/Users/dpacif1/scala/PercolatoinAssignment/WordNet/src/hypernyms15Tree.txt";
 
             synsetFile = "/Users/dpacif1/scala/PercolatoinAssignment/WordNet/src/synsets.txt";
             hypernyms = "/Users/dpacif1/scala/PercolatoinAssignment/WordNet/src/hypernyms.txt";
-
-            //synsetFile = "/Users/dpacif1/scala/PercolatoinAssignment/WordNet/src/synsets15.txt";
-            //hypernyms = "/Users/dpacif1/scala/PercolatoinAssignment/WordNet/src/hypernyms15Path.txt";
 
 
         } else {

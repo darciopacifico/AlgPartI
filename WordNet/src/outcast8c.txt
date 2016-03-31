@@ -6,3 +6,7 @@ tree
 train
 vehicle
 van
+
+
+
+car auto truck plane tree train vehicle van
