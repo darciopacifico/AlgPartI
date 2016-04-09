@@ -19,9 +19,9 @@ public class WordNet {
 
     private Map<Integer, Synset> mapByIdSynset = new HashMap<Integer, Synset>();
 
-    private Digraph digraph;
+    final private Digraph digraph;
 
-    private SAP sap;
+    final private SAP sap;
 
     /**
      * Synset data structure / class
@@ -48,7 +48,7 @@ public class WordNet {
         final Integer lineCount = getLineCount(synsets);
         this.digraph = new Digraph(lineCount);
 
-        fillHypernyms(hypernyms);
+        this.sap = fillHypernyms(hypernyms);
         fillMapSynset(synsets);
         validateDAGDigraph();
     }
@@ -60,15 +60,12 @@ public class WordNet {
         if (!new Topological(this.digraph).hasOrder()) {
             throw new IllegalArgumentException("Synset must not be a DAG Digraph!");
         }
-
         if (!new TopologicalX(this.digraph).hasOrder()) {
             throw new IllegalArgumentException("Synset must not be a DAG Digraph!");
         }
-
         if (new DirectedCycle(this.digraph).hasCycle()) {
             throw new IllegalArgumentException("Synset must not be a DAG Digraph!");
         }
-
 
         int countZeroOutDegrees = 0;
         for (int v = 0; v < this.digraph.V(); v++) {
@@ -80,8 +77,6 @@ public class WordNet {
                 }
             }
         }
-
-
     }
 
     /**
@@ -89,7 +84,7 @@ public class WordNet {
      *
      * @param hypernyms
      */
-    private void fillHypernyms(String hypernyms) {
+    private SAP fillHypernyms(String hypernyms) {
 
         In in = new In(hypernyms);
         while (in.hasNextLine()) {
@@ -107,7 +102,7 @@ public class WordNet {
             }
         }
 
-        this.sap = new SAP(this.digraph);
+        return new SAP(this.digraph);
     }
 
     /**
