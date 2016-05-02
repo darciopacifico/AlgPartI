@@ -8,6 +8,11 @@ public class LabString {
 
     public static void main(String[] args) {
 
+        String nodes[] = new String[512];
+
+        String x = nodes['d'];
+
+
         String[] nums = new String[]{
                 "3164",
                 "3363",
